@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <title>Wellcome to Brand</title>
+  </head>
+  <body class="bg-gray-100 py-6 px-2.5 md:w-[80%] mx-auto">
+    <!-- Navbar -->
+    <nav
+      class="flex items-center justify-between md:justify-around p-4 fixed inset-x-0 top-0 bg-white shadow-lg z-50"
+    >
+      <h1 class="text-2xl md:text-3xl font-bold">Brand</h1>
+
+      <!-- Cart Icon with Badge -->
+      <div class="flex items-center gap-6">
+        <div id="cartIcon" class="relative cursor-pointer">
+          <i class="fa-solid fa-cart-shopping text-xl"></i>
+          <span
+            id="cartCount"
+            class="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+            >0</span
+          >
+        </div>
+
+        <div
+          id="wishlist-icon"
+          class="px-3 py-1 text-black rounded-md cursor-pointer border-[1.5px] border-black"
+        >
+          Wishlist
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="mt-[60px]">
+      <!-- Products Grid -->
+      <div
+        id="products"
+        class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4"
+      ></div>
+
+      <!-- Cart Section -->
+      <div
+        id="cartOverlay"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+      ></div>
+
+      <!-- Cart Modal -->
+      <div
+        id="cartContainer"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white p-5 rounded-md w-96 max-h-[80vh] overflow-y-auto relative"
+        >
+          <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-semibold mb-4">Cart</h2>
+            <button id="closeCart" class="text-gray-600 hover:text-black">
+              <i class="fa-solid fa-xmark h-8"></i>
+            </button>
+          </div>
+
+          <ul id="cartItems" class="space-y-2"></ul>
+          <p id="total" class="mt-4 text-xl font-bold">Total: $0</p>
+        </div>
+      </div>
+
+      <!-- Wishlist Section -->
+      <div
+        id="wishListContainer"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white p-5 rounded-md w-96 max-h-[80vh] overflow-y-auto relative"
+        >
+          <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-semibold mb-4">Wishlist</h2>
+            <button id="closeWishlist" class="text-gray-600 hover:text-black">
+              <i class="fa-solid fa-xmark h-8"></i>
+            </button>
+          </div>
+          <ul id="wishList" class="space-y-2"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
