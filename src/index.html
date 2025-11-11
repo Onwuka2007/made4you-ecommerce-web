@@ -63,12 +63,12 @@
       </div>
 
       <!-- Icons -->
-      <div class="flex items-center gap-5">
+      <div id="icons" class="flex items-center gap-5 text-white">
         <a href="">
-          <i class="fa-solid fa-cart-shopping text-white cursor-pointer"></i>
+          <i class="fa-solid fa-cart-shopping cursor-pointer"></i>
         </a>
         <a href="signup.html">
-          <i class="fa-regular fa-user text-white cursor-pointer"></i
+          <i class="fa-regular fa-user cursor-pointer"></i
         ></a>
       </div>
     </header>
@@ -82,7 +82,7 @@
     >
       <div class="absolute inset-0 bg-black/50"></div>
 
-      <div class="relative z-10 text-center px-6 md:px-20 max-w-3xl space-y-8">
+      <div class="relative z-10 text-center px-5 md:px-20 max-w-3xl space-y-8">
         <h1
           class="text-5xl md:text-7xl leading-tight font-semibold gradient-text"
         >
@@ -98,7 +98,9 @@
         </p>
 
         <!-- Buttons -->
-        <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <div
+          class="flex flex-wrap justify-center gap-4 pt-2 text-sm md:text-base"
+        >
           <button
             class="bg-white text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition cursor-pointer"
           >
@@ -218,7 +220,7 @@
     <!-- Back to Top Button -->
     <button
       id="backToTop"
-      class="hidden fixed bottom-6 right-6 cursor-pointer bg-black border-2 border-white/20 text-white p-3 rounded-full shadow-md hover:bg-black/80 transition z-100"
+      class="hidden fixed bottom-6 right-6 cursor-pointer bg-black border-2 border-white/20 text-white p-3 rounded-full shadow-lg hover:bg-black/80 hover:-translate-y-1 transition duration-300 z-100"
       title="Back to top"
     >
       <svg
@@ -248,13 +250,15 @@
         </h2>
         <a
           href="/signin.html"
-          class="text-gray-800 font-medium hover:underline hover:text-black"
+          class="text-gray-800 font-medium hover:underline text-sm md:text-base hover:text-black"
           >See All →</a
         >
       </div>
 
       <!-- Tabs -->
-      <div class="flex gap-6 mb-10 text-gray-700 font-medium">
+      <div
+        class="flex gap-6 mb-10 text-gray-700 font-medium text-sm md:text-base"
+      >
         <button
           class="tab-btn active text-black border-b-2 border-black pb-1"
           data-tab="clothes"
@@ -283,7 +287,7 @@
         >
           <div class="relative">
             <img
-              src="./assets/images/clothes_collecion.jpg"
+              src="./assets/images/clothes_ankara-lady.webp"
               class="rounded-2xl mb-5 h-72 w-full object-cover"
             />
             <button
@@ -292,10 +296,10 @@
               Click to Add to Cart<span class="ml-1">→</span>
             </button>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900">
-            Classic Retro Coat
+          <h3 class="text-xl font-semibold text-gray-900 truncate">
+            Hertunba Nma Maxi Dress
           </h3>
-          <p class="text-gray-600 text-lg mt-1">₦18,500</p>
+          <p class="text-gray-600 text-lg mt-1">₦660,700</p>
           <button
             onclick="window.location.href='/signup.html'"
             class="px-4 py-2 bg-black hover:bg-black/80 text-white rounded-lg my-2 w-full text-center transition duration-300"
@@ -318,8 +322,10 @@
               Click to Add to Cart<span class="ml-1">→</span>
             </button>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900">Denim Jacket</h3>
-          <p class="text-gray-600 text-lg mt-1">₦20,000</p>
+          <h3 class="text-xl font-semibold text-gray-900 truncate">
+            Denim Jacket
+          </h3>
+          <p class="text-gray-600 text-lg mt-1">₦70,000</p>
           <button
             onclick="window.location.href='/signup.html'"
             class="px-4 py-2 bg-black hover:bg-black/80 text-white rounded-lg my-2 w-full text-center transition duration-300"
@@ -333,7 +339,7 @@
         >
           <div class="relative cursor-pointer">
             <img
-              src="./assets/images/second_backdrop_image.jpg"
+              src="./assets/images/clothes_man.jpg"
               class="rounded-2xl mb-5 h-72 w-full object-cover"
             />
             <button
@@ -342,8 +348,10 @@
               Click to Add to Cart<span class="ml-1">→</span>
             </button>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900">Street Fit</h3>
-          <p class="text-gray-600 text-lg mt-1">₦25,000</p>
+          <h3 class="text-xl font-semibold text-gray-900 trunacte">
+            Stone Island Collection
+          </h3>
+          <p class="text-gray-600 text-lg mt-1">₦205,000</p>
           <button
             onclick="window.location.href='/signup.html'"
             class="px-4 py-2 bg-black hover:bg-black/80 text-white rounded-lg my-2 w-full text-center transition duration-300"
@@ -595,7 +603,7 @@
           <button
             class="w-full text-left flex justify-between items-center text-gray-800 font-medium py-2 faq-toggle cursor-pointer"
           >
-            Do you offer discounts or promo codes?
+            Do you offer discounts?
             <span class="text-xl">+</span>
           </button>
           <p class="mt-2 text-gray-600 hidden faq-content">
@@ -614,9 +622,10 @@
     >
       <div class="absolute inset-0 bg-black/70"></div>
 
-      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-20 space-y-16">
+      <!-- newsletter form -->
+      <div class="relative z-10 max-w-6xl mx-auto md:px-20 space-y-16">
         <div
-          class="bg-black/80 border border-white/10 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6"
+          class="bg-black/80 border-y md:border border-white/10 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <div class="flex-1">
             <h3 class="text-2xl md:text-3xl font-semibold mb-2">
@@ -643,7 +652,7 @@
           </form>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-xs">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20 text-xs">
           <div class="space-y-4">
             <h3 class="text-xl font-semibold">Made4You</h3>
             <p class="text-gray-400">
@@ -652,22 +661,11 @@
             </p>
           </div>
 
-          <div class="space-y-2">
-            <h4 class="font-semibold">Navigation</h4>
-            <ul class="space-y-1 text-gray-400">
-              <li><a href="#explore" class="hover:text-white">Explore</a></li>
-              <li><a href="#about" class="hover:text-white">About Us</a></li>
-              <li><a href="#partners" class="hover:text-white">Partners</a></li>
-              <li><a href="#faq" class="hover:text-white">FAQ</a></li>
-            </ul>
-          </div>
-
           <div class="space-y-4">
             <h4 class="font-semibold">Connect</h4>
             <div class="flex gap-4">
               <a href="#" class="hover:text-white transition">Instagram</a>
               <a href="#" class="hover:text-white transition">Twitter</a>
-              <a href="#" class="hover:text-white transition">Facebook</a>
             </div>
             <p class="text-gray-400 mt-4">
               © 2025 Made4You. All rights reserved.
@@ -677,8 +675,9 @@
       </div>
     </footer>
 
-    <!-- Mailing List Modal -->
+    <!-- Mailing list modal -->
     <section
+      id="mailModal"
       class="fixed inset-0 bg-black/60 z-100 flex justify-center items-center px-4"
     >
       <div
@@ -689,7 +688,8 @@
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          class="absolute right-5 top-2"
+          class="absolute right-5 top-2 cursor-pointer"
+          id="closeModal"
         >
           <rect width="24" height="24" fill="none" />
           <path
@@ -702,7 +702,6 @@
           />
         </svg>
 
-        <!-- Left Image -->
         <div class="hidden md:block w-1/2 h-full">
           <img
             src="./assets/images/Timini-3.jpeg"
@@ -711,12 +710,11 @@
           />
         </div>
 
-        <!-- Right Form -->
         <div
           class="flex flex-col justify-center items-center w-full md:w-1/2 p-8 text-center"
         >
-          <div class="flex flex-col gap-10 md:gap-20">
-            <h2 class="text-3xl font-semibold mb-4 font-serif">
+          <div class="flex flex-col gap-5 md:gap-20">
+            <h2 class="text-3xl font-semibold my-8 md:my-4 font-serif">
               Join Our Mailing List
             </h2>
             <div>
