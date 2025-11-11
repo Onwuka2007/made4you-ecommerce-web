@@ -376,13 +376,27 @@ document.querySelectorAll(".faq-toggle").forEach((btn) => {
   });
 });
 
-const modal = document.getElementById("mailModal");
-const closeBtn = document.getElementById("closeModal");
 
-window.addEventListener("load", () => {
+function subscribeModal() {
+  const modal = document.getElementById("mailModal");
+  const closeBtn = document.getElementById("closeModal");
+
   modal.classList.remove("hidden");
-});
 
-closeBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
+  requestAnimationFrame(() => {
+    modal.classList.remove("opacity-0", "scale-95");
+    modal.classList.add("opacity-100", "scale-100", "flex");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.add("opacity-0", "scale-95");
+    modal.classList.remove("opacity-100");
+
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }, 300);
+  });
+}
+
+setTimeout(subscribeModal, 3000);
