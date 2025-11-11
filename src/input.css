@@ -29,6 +29,22 @@ body {
   color: transparent;
 }
 
+/* trusted partners infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
 /* hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -43,4 +59,23 @@ body {
     justify-content: space-evenly;
     padding: 18px 0px;
   }
+}
+
+
+/*  */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-bg.active {
+  opacity: 1;
+  z-index: 10;
+  overflow: hidden;
+  transform: scale(1.05);
+  transition: opacity 1s ease-in-out, transform 4s ease-in-out;
 }

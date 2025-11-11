@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Made4You</title>
+    <link href="/src/output.css" rel="stylesheet" />
+  </head>
+  <body class="font-sans bg-gray-100">
+    <section class="flex min-h-screen flex-col md:flex-row overflow-hidden">
+      <!-- Left Image (Hidden on Mobile) -->
+      <div class="hidden md:block w-1/2 h-screen relative">
+        <img
+          src="/src/assets/images/Timini-3.jpeg"
+          alt="Join Us"
+          class="hero-bg active w-full h-full object-cover absolute inset-0"
+        />
+
+        <img
+          src="/src/assets/images/hoodies_cross.webp"
+          alt="Join Us"
+          class="hero-bg w-full h-full object-cover absolute inset-0"
+        />
+        <img
+          src="/src/assets/images/clothes_man.jpg"
+          alt="Join Us"
+          class="hero-bg w-full h-full object-cover absolute inset-0"
+        />
+      </div>
+
+      <!-- Right Form Section -->
+      <div
+        class="flex flex-col justify-center items-center h-screen w-full md:w-1/2 px-6 sm:px-10 py-10 md:py-0 bg-white md:bg-white/80 md:backdrop-blur-lg md:shadow-xl md:rounded-none"
+      >
+        <div class="w-full max-w-md">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+            Create Account
+          </h1>
+          <p class="text-gray-500 mb-8 text-sm">
+            Join the movement get early access to new drops and collections.
+          </p>
+
+          <form class="space-y-5">
+            <div>
+              <label class="block text-gray-600 mb-2 text-sm">Full Name</label>
+              <input
+                type="text"
+                placeholder="John Doe"
+                class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label class="block text-gray-600 mb-2 text-sm">Email</label>
+              <input
+                type="email"
+                placeholder="you@example.com"
+                class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label class="block text-gray-600 mb-2 text-sm">Password</label>
+              <input
+                type="password"
+                placeholder="••••••••"
+                class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-black text-white py-3 rounded-2xl font-medium hover:bg-gray-800 transition"
+            >
+              Sign Up
+            </button>
+          </form>
+
+          <p class="text-center text-gray-500 mt-6 text-sm">
+            Already have an account?
+            <a href="login.html" class="text-black font-medium hover:underline"
+              >Log In</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="signup.js"></script>
+  </body>
+</html>

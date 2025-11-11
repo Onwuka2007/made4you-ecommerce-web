@@ -18,11 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-    <link
-      rel="shortcut icon"
-      href="./assets/images/made4u_logo_black_bg.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- smooth scrool with Lenis -->
     <script src="https://unpkg.com/lenis@1.3.14/dist/lenis.min.js"></script>
@@ -35,11 +31,9 @@
     >
       <!-- Logo -->
       <div
-        class="p-3 h-10 w-10 relative bg-black rounded-full text-white text-xs font-bold"
+        class="p-0.5 size-11 bg-black rounded-full text-white text-xs font-bold overflow-hidden"
       >
-        <p class="absolute left-4 flex">
-          M <span class="text-amber-600">4</span>U
-        </p>
+        <img src="./assets/images/logo.png" alt="m4u" />
       </div>
 
       <div class="flex items-center gap-5">
@@ -64,8 +58,11 @@
 
       <!-- Icons -->
       <div id="icons" class="flex items-center gap-5 text-white">
-        <a href="">
+        <a href="" class="relative">
           <i class="fa-solid fa-cart-shopping cursor-pointer"></i>
+          <span
+            class="absolute right-0 size-2 rounded-full bg-green-400"
+          ></span>
         </a>
         <a href="signup.html">
           <i class="fa-regular fa-user cursor-pointer"></i
@@ -89,7 +86,7 @@
           made4you
         </h1>
         <span class="text-3xl md:text-5xl block italic font-serif mt-2"
-          >Wear Value. Support Chnage</span
+          >Wear Value. Support Change</span
         >
 
         <p class="text-gray-200 leading-relaxed max-w-2xl mx-auto">
@@ -301,7 +298,7 @@
           </h3>
           <p class="text-gray-600 text-lg mt-1">₦660,700</p>
           <button
-            onclick="window.location.href='/signup.html'"
+            onclick="window.location.href='/redirect.html'"
             class="px-4 py-2 bg-black hover:bg-black/80 text-white rounded-lg my-2 w-full text-center transition duration-300"
           >
             Get
@@ -367,7 +364,6 @@
       class="relative flex flex-col items-center justify-center bg-fixed bg-cover bg-center text-white py-24 px-6 md:px-20"
       style="background-image: url('./assets/images/second_backdrop_image.jpg')"
     >
-      <!-- Overlay for readability -->
       <div class="absolute inset-0 bg-black/60"></div>
 
       <h2
@@ -483,54 +479,75 @@
       </div>
     </section>
 
-    <!--  partners  -->
-    <section id="partners" class="w-full mx-auto py-10">
+    <!-- Partners -->
+    <section id="partners" class="w-full overflow-hidden py-10 mt-10">
       <h3 class="text-center text-gray-400 tracking-widest uppercase mb-6">
         50+ trusted partners
       </h3>
-      <div class="flex justify-center gap-16 overflow-x-auto no-scrollbar py-2">
-        <div class="flex-shrink-0">
+
+      <div class="relative w-full overflow-hidden">
+        <div class="flex animate-scroll gap-16">
           <img
             src="https://www.houseofatana.com/cdn/shop/files/grazia_logo_320x.png?v=1643644941"
-            alt="Brand logo"
             class="h-16 md:h-20 object-contain"
+            alt="Brand"
           />
-        </div>
-        <div class="flex-shrink-0">
           <img
             src="https://www.houseofatana.com/cdn/shop/files/harpar-bazar-mnm_320x.png?v=1656393606"
-            alt="Brand logo"
             class="h-16 md:h-20 object-contain"
+            alt="Brand"
           />
-        </div>
-        <div class="flex-shrink-0">
           <img
             src="https://download.logo.wine/logo/Zara_(retailer)/Zara_(retailer)-Logo.wine.png"
-            alt="Brand logo"
             class="h-16 md:h-20 object-contain"
+            alt="Brand"
           />
-        </div>
-
-        <div class="flex-shrink-0">
           <img
             src="https://www.houseofatana.com/cdn/shop/files/Conde_Nast_Traveller_logo_240x.png?v=1711109009"
-            alt="Brand logo"
             class="h-16 md:h-20 object-contain"
+            alt="Brand"
           />
-        </div>
-        <div class="flex-shrink-0">
           <img
             src="https://www.houseofatana.com/cdn/shop/files/baazar-lorff-nm_320x.png?v=1656337904"
-            alt="Brand logo"
             class="h-16 md:h-20 object-contain"
+            alt="Brand"
           />
-        </div>
-
-        <div class="flex-shrink-0">
           <img
             src="https://www.houseofatana.com/cdn/shop/files/forbes_logo_320x.png?v=1643644941"
-            alt="Brand logo"
             class="h-16 md:h-20 object-contain"
+            alt="Brand"
+          />
+
+          <!-- second time -->
+          <img
+            src="https://www.houseofatana.com/cdn/shop/files/grazia_logo_320x.png?v=1643644941"
+            class="h-16 md:h-20 object-contain"
+            alt="Brand"
+          />
+          <img
+            src="https://www.houseofatana.com/cdn/shop/files/harpar-bazar-mnm_320x.png?v=1656393606"
+            class="h-16 md:h-20 object-contain"
+            alt="Brand"
+          />
+          <img
+            src="https://download.logo.wine/logo/Zara_(retailer)/Zara_(retailer)-Logo.wine.png"
+            class="h-16 md:h-20 object-contain"
+            alt="Brand"
+          />
+          <img
+            src="https://www.houseofatana.com/cdn/shop/files/Conde_Nast_Traveller_logo_240x.png?v=1711109009"
+            class="h-16 md:h-20 object-contain"
+            alt="Brand"
+          />
+          <img
+            src="https://www.houseofatana.com/cdn/shop/files/baazar-lorff-nm_320x.png?v=1656337904"
+            class="h-16 md:h-20 object-contain"
+            alt="Brand"
+          />
+          <img
+            src="https://www.houseofatana.com/cdn/shop/files/forbes_logo_320x.png?v=1643644941"
+            class="h-16 md:h-20 object-contain"
+            alt="Brand"
           />
         </div>
       </div>
@@ -652,7 +669,9 @@
           </form>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20 text-xs">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20 text-xs"
+        >
           <div class="space-y-4">
             <h3 class="text-xl font-semibold">Made4You</h3>
             <p class="text-gray-400">
@@ -676,7 +695,7 @@
     </footer>
 
     <!-- Mailing list modal -->
-    <section
+    <!-- <section
       id="mailModal"
       class="fixed inset-0 bg-black/60 z-100 flex justify-center items-center px-4"
     >
@@ -738,7 +757,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <script src="./script.js"></script>
   </body>
