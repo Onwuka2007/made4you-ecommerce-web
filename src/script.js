@@ -30,7 +30,7 @@ const products = {
           </h3>
           <p class="text-gray-600 text-lg mt-1">₦660,700</p>
           <button
-            onclick="window.location.href='/redirect.html'"
+            onclick="window.location.href='./redirect.html'"
             class="px-4 py-2 bg-black hover:bg-black/80 text-white rounded-lg my-2 w-full text-center transition duration-300"
           >
             Get
