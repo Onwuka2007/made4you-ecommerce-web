@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Cutomisation */
+
+@theme {
+  --font-serif: "Quintessential", serif;
+}
+
 /* Header style */
 
 .header-backdrop {
@@ -12,9 +18,6 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #f8f8f6;
-}
-.font-serif {
-  font-family: "Quintessential", serif;
 }
 
 /* made4u text */
