@@ -376,7 +376,6 @@ document.querySelectorAll(".faq-toggle").forEach((btn) => {
   });
 });
 
-
 function subscribeModal() {
   const modal = document.getElementById("mailModal");
   const closeBtn = document.getElementById("closeModal");
