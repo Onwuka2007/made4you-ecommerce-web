@@ -1,8 +1,14 @@
 {
-  "builds": [
-    { "src": "src/pages/**/*.html", "use": "@vercel/static" }
+  "builds": [{ "src": "src/pages/**/*.html", "use": "@vercel/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "src/pages/$1" }],
+
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/:path*", "destination": "/:path*.html" }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "src/pages/$1" }
+  "redirects": [
+    { "source": "/index", "destination": "/home", "permanent": true },
+    { "source": "/:path*.html", "destination": "/:path*", "permanent": true }
   ]
 }

@@ -60,22 +60,3 @@ body {
     padding: 18px 0px;
   }
 }
-
-
-/*  */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  z-index: 0;
-  overflow: hidden;
-}
-.hero-bg.active {
-  opacity: 1;
-  z-index: 10;
-  overflow: hidden;
-  transform: scale(1.05);
-  transition: opacity 1s ease-in-out, transform 4s ease-in-out;
-}

@@ -4,73 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up | Made4You</title>
-        <link rel="stylesheet" href="./output.css" />
-  </head>
-  <body class="font-sans bg-gray-100">
-    <section class="flex min-h-screen flex-col md:flex-row overflow-hidden">
-      <!-- Left Image (Hidden on Mobile) -->
-      <div class="hidden md:block w-1/2 h-screen relative">
-        <img
-          src="./assets/images/Timini-3.jpeg"
-          alt="Join Us"
-          class="hero-bg active w-full h-full object-cover absolute inset-0"
-        />
+    <link rel="stylesheet" href="../output.css" />
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="font-sans bg-white">
+    <section class="flex min-h-screen flex-col md:flex-row overflow-hidden">
+      <div class="hidden md:block w-1/2 h-screen">
         <img
-          src="./assets/images/hoodies_cross.webp"
+          src="../assets/images/Timini-3.jpeg"
           alt="Join Us"
-          class="hero-bg w-full h-full object-cover absolute inset-0"
+          class="w-full h-full object-cover"
         />
-        <img
-          src="./assets/images/clothes_man.jpg"
-          alt="Join Us"
-          class="hero-bg w-full h-full object-cover absolute inset-0"
-        />
+      </div>
+
+      <!-- Mobile Hero Section -->
+      <div
+        class="md:hidden rounded-b-lg shadow-lg text-white px-4 py-8 relative overflow-hidden"
+        style="
+          background-image: url('../assets/images/Timini-3.jpeg');
+          background-position: center;
+          object-fit: cover;
+          background-size: cover;
+        "
+      >
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-2 mb-6">
+            <!-- Logo -->
+            <div
+              class="p-0.5 size-11 bg-black rounded-full border border-gray-600 text-white text-xs font-bold overflow-hidden"
+            >
+              <img src="../assets/images/logo.png" alt="m4u" />
+            </div>
+          </div>
+
+          <h1 class="text-3xl font-serif md:text-4xl font-bold mb-6">
+            Create Account
+          </h1>
+          <p class="text-gray-300 text-sm">
+            Join the movement and get early access to new drops and collections.
+          </p>
+        </div>
       </div>
 
       <!-- Right Form Section -->
       <div
-        class="flex flex-col justify-center items-center h-screen w-full md:w-1/2 px-6 sm:px-10 py-10 md:py-0 bg-white md:bg-white/80 md:backdrop-blur-lg md:shadow-xl md:rounded-none"
+        class="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-10 md:py-0 bg-white md:bg-white/80 md:backdrop-blur-lg md:shadow-xl md:rounded-l-3xl"
       >
         <div class="w-full max-w-md">
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <h1
+            class="text-3xl hidden md:block font-serif md:text-4xl font-bold mb-6"
+          >
             Create Account
           </h1>
-          <p class="text-gray-500 mb-8 text-sm">
-            Join the movement get early access to new drops and collections.
+          <p class="text-gray-500 hidden md:block text-sm mb-10">
+            Join the movement and get early access to new drops and collections.
           </p>
-
           <form class="space-y-5">
             <div>
-              <label class="block text-gray-600 mb-2 text-sm">Full Name</label>
+              <label for="fullName" class="block text-gray-600 mb-2 text-sm"
+                >Full Name</label
+              >
               <input
+                id="fullName"
+                name="fullName"
                 type="text"
+                autocomplete="name"
                 placeholder="John Doe"
-                class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none"
+                class="w-full px-4 py-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none shadow-sm transition"
               />
             </div>
 
             <div>
-              <label class="block text-gray-600 mb-2 text-sm">Email</label>
+              <label for="email" class="block text-gray-600 mb-2 text-sm"
+                >Email</label
+              >
               <input
+                id="email"
+                name="email"
                 type="email"
+                autocomplete="email"
                 placeholder="you@example.com"
-                class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none"
+                class="w-full px-4 py-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none shadow-sm transition"
               />
             </div>
 
             <div>
-              <label class="block text-gray-600 mb-2 text-sm">Password</label>
+              <label for="password" class="block text-gray-600 mb-2 text-sm"
+                >Password</label
+              >
               <input
+                id="password"
+                name="password"
                 type="password"
+                autocomplete="new-password"
                 placeholder="••••••••"
-                class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none"
+                class="w-full px-4 py-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none shadow-sm transition"
               />
             </div>
 
             <button
               type="submit"
-              class="w-full bg-black text-white py-3 rounded-2xl font-medium hover:bg-gray-800 transition"
+              class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer"
             >
               Sign Up
             </button>
@@ -78,7 +124,9 @@
 
           <p class="text-center text-gray-500 mt-6 text-sm">
             Already have an account?
-            <a href="login.html" class="text-black font-medium hover:underline"
+            <a
+              href="./login.html"
+              class="text-black font-medium hover:underline"
               >Log In</a
             >
           </p>

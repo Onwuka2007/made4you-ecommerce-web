@@ -3,16 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome | Made4You</title>
-    <link rel="stylesheet" href="./output.css" />
+    <title>Welcome - Sign In Get Started</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
-  <body class="font-sans bg-gray-900 text-white">
+  <body class="bg-gray-900 text-white">
     <section
       class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
     >
       <!-- Background -->
       <img
-        src="./assets/images/hoodies_renaissance.webp"
+        src="../assets/images/hoodies_renaissance.webp"
         alt="bg"
         class="absolute inset-0 w-full h-full object-cover opacity-40"
       />
@@ -21,9 +38,9 @@
       <!-- Content -->
       <div class="relative z-10 text-center px-6">
         <h1
-          class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-300 bg-clip-text text-transparent"
+          class="text-5xl md:text-6xl font-serif font-bold mb-6 bg-linear-to-r from-gray-200 via-gray-100 to-gray-300 bg-clip-text text-transparent"
         >
-          Welcome to Made4You
+          Welcome to <span class="gradient-text">Made4You</span>
         </h1>
         <p class="text-gray-300 mb-10 max-w-md mx-auto">
           Your go-to space for authentic Nigerian fashion. Sign up or log in to
@@ -33,13 +50,13 @@
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="signup.html"
+            href="./signup.html"
             class="px-8 py-3 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-200 transition"
             >Sign Up</a
           >
           <a
-            href="login.html"
-            class="px-8 py-3 border border-white rounded-full font-medium hover:bg-white hover:text-gray-900 transition"
+            href="./login.html"
+            class="px-8 py-3 border border-white rounded-full font-medium hover:bg-white/5 transition"
             >Log In</a
           >
         </div>
