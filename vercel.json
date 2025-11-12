@@ -1,7 +1,4 @@
 {
-  "builds": [{ "src": "src/pages/**/*.html", "use": "@vercel/static" }],
-  "routes": [{ "src": "/(.*)", "dest": "src/pages/$1" }],
-
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/home", "destination": "/index.html" },
