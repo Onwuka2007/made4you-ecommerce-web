@@ -11,15 +11,15 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
       rel="stylesheet"
     />
-    <!-- Google Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Carattere&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
-      rel="stylesheet"
+      rel="shortcut icon"
+      href="../assets/icons/favicon.ico"
+      type="image/x-icon"
     />
-    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
   </head>
   <body class="font-sans bg-white">
     <section class="flex min-h-screen flex-col md:flex-row overflow-hidden">
+      <!-- Left Hero -->
       <div class="hidden md:block w-1/2 h-screen">
         <img
           src="../assets/images/Timini-3.jpeg"
@@ -28,7 +28,7 @@
         />
       </div>
 
-      <!-- Mobile Hero Section -->
+      <!-- Mobile Hero -->
       <div
         class="md:hidden rounded-b-lg shadow-lg text-white px-4 py-8 relative overflow-hidden"
         style="
@@ -41,7 +41,6 @@
         <div class="absolute inset-0 bg-black/70"></div>
         <div class="relative z-10">
           <div class="flex items-center gap-2 mb-6">
-            <!-- Logo -->
             <div
               class="p-0.5 size-11 bg-black rounded-full border border-gray-600 text-white text-xs font-bold overflow-hidden"
             >
@@ -58,7 +57,7 @@
         </div>
       </div>
 
-      <!-- Right Form Section -->
+      <!-- Right Form -->
       <div
         class="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-10 md:py-0 bg-white md:bg-white/80 md:backdrop-blur-lg md:shadow-xl md:rounded-l-3xl"
       >
@@ -71,6 +70,7 @@
           <p class="text-gray-500 hidden md:block text-sm mb-10">
             Join the movement and get early access to new drops and collections.
           </p>
+
           <form class="space-y-5">
             <div>
               <label for="fullName" class="block text-gray-600 mb-2 text-sm"
@@ -115,7 +115,8 @@
             </div>
 
             <button
-              type="submit"
+              type="button"
+              onclick="register()"
               class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer"
             >
               Sign Up
@@ -134,6 +135,33 @@
       </div>
     </section>
 
-    <script src="./signup.js"></script>
+    <!-- Firebase Modular SDK + Auth -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+      import { firebaseConfig } from "../js/firebase-config.js";
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      window.register = async () => {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        try {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          console.log("✅ User created:", userCredential.user);
+          alert("Account created successfully!");
+        } catch (err) {
+          console.error("❌ Signup error:", err.message);
+          alert(err.message);
+        }
+      };
+    </script>
+
+    <script src="../js/signup.js"></script>
   </body>
 </html>

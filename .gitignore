@@ -1,1 +1,18 @@
-vercel.json
+# Dependencies
+/node_modules
+
+# Firebase config
+/src/js/firebase-config.js
+
+# Build output
+# If you have a build process, add your output directory here. e.g. /dist
+/src/output.css
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local

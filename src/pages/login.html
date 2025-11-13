@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Login
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Made4You</title>
+    <link rel="stylesheet" href="../output.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="m-0 p-0 box-border">
+    <section class="flex min-h-screen flex-col md:flex-row overflow-hidden">
+      <div class="hidden md:block w-1/2 h-screen">
+        <img
+          src="../assets/images/backdrop_login-page.jpg"
+          alt="Join Us"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Mobile Hero Section -->
+      <div
+        class="md:hidden rounded-b-lg shadow-lg text-white px-4 py-8 relative overflow-hidden"
+        style="
+          background-image: url('../assets/images/backdrop_login-page.jpg');
+          background-position: center;
+          object-fit: cover;
+          background-size: cover;
+        "
+      >
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-2 mb-6">
+            <!-- Logo -->
+            <div
+              class="p-0.5 size-11 bg-black rounded-full border border-gray-600 text-white text-xs font-bold overflow-hidden"
+            >
+              <img src="../assets/images/logo.png" alt="m4u" />
+            </div>
+          </div>
+
+          <h1 class="text-4xl font-serif font-bold mb-6">Welcome Back</h1>
+          <p class="text-gray-300 text-sm">
+            Login to you account to get full access of your cart, wishlist and
+            our great offers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Form Section -->
+      <div
+        class="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-10 md:py-0 bg-white md:bg-white/80 md:backdrop-blur-lg md:shadow-xl md:rounded-l-3xl"
+      >
+        <div class="w-full max-w-md">
+          <h1
+            class="text-3xl hidden md:block font-serif md:text-4xl font-bold mb-6"
+          >
+            Welcome Back
+          </h1>
+          <p class="text-gray-500 hidden md:block text-sm mb-10">
+            Login to you account to get full access of your cart, wishlist and
+            our great offers.
+          </p>
+          <form class="space-y-5">
+            <div>
+              <label for="fullName" class="block text-gray-600 mb-2 text-sm"
+                >Full Name</label
+              >
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                autocomplete="name"
+                placeholder="John Doe"
+                class="w-full px-4 py-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none shadow-sm transition"
+              />
+            </div>
+
+            <div>
+              <label for="password" class="block text-gray-600 mb-2 text-sm"
+                >Password</label
+              >
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="••••••••"
+                class="w-full px-4 py-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none shadow-sm transition"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer"
+            >
+              Log In
+            </button>
+          </form>
+
+          <p class="text-center text-gray-500 mt-6 text-sm">
+            Dont have an account yet?
+            <a
+              href="./login.html"
+              class="text-black font-medium hover:underline"
+              >Sign up</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="./signup.js"></script>
+  </body>
 </html>
