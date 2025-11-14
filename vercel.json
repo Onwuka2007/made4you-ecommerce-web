@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "rewrites": [{ "source": "/:page", "destination": "/pages/:page.html" }]
+  "rewrites": [
+    { "source": "/redirect", "destination": "/pages/redirect.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/signup", "destination": "/signup.html" }
+  ]
 }
