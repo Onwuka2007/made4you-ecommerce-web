@@ -212,9 +212,27 @@
     </section>
 
     <!-- Firebase Modular SDK + Auth -->
-    <script>
-      const form = document.querySelector("form");
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
+      import {
+        getFirestore,
+        setDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+      import { firebaseConfig } from "../js/firebase-config.js";
+
+      // init
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      const form = document.querySelector("form");
       form.addEventListener("submit", async (e) => {
         e.preventDefault(); // prevent form from refreshing page
 
@@ -265,6 +283,7 @@
         }
       });
     </script>
+
     <!-- <script src="../js/signup.js"></script> -->
   </body>
 </html>
