@@ -127,136 +127,78 @@
             collections.
           </p>
 
-          <form id="signupForm" class="space-y-5">
+          <form class="space-y-5">
             <div>
-              <label class="sr-only" for="fullName">Username</label>
+              <label
+                class="text-sm font-medium leading-normal sr-only"
+                for="text"
+                >Username</label
+              >
               <input
+                autocomplete="name"
+                class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
                 id="fullName"
                 name="userName"
-                type="text"
                 placeholder="Username"
-                autocomplete="name"
-                class="form-input-bottom h-12 w-full text-md placeholder:text-gray-400"
+                type="text"
               />
             </div>
 
             <div>
-              <label class="sr-only" for="email">Email</label>
+              <label
+                for="email"
+                class="text-sm font-medium leading-normal sr-only"
+                >Email</label
+              >
               <input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Email address"
                 autocomplete="email"
-                class="form-input-bottom h-12 w-full text-md placeholder:text-gray-400"
+                placeholder="Email address"
+                class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
               />
             </div>
 
             <div>
-              <label class="sr-only" for="password">Password</label>
+              <label
+                for="password"
+                class="text-sm font-medium leading-normal sr-only"
+                >Password</label
+              >
               <input
                 id="password"
                 name="password"
                 type="password"
-                placeholder="Password"
                 autocomplete="new-password"
-                class="form-input-bottom h-12 w-full text-md placeholder:text-gray-400"
+                placeholder="Password"
+                class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
               />
             </div>
 
             <div>
-              <label class="sr-only" for="confirmPassword"
-                >Confirm Password</label
+              <label
+                for="password"
+                class="text-sm font-medium leading-normal sr-only"
+                >Cofirm Password</label
               >
               <input
                 id="confirmPassword"
                 name="confirmPassword"
                 type="password"
                 placeholder="Confirm password"
-                class="form-input-bottom h-12 w-full text-md placeholder:text-gray-400"
+                class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
               />
             </div>
 
             <button
-              type="submit"
+              type="button"
+              onclick="register()"
               class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer mt-5"
             >
               Sign Up
             </button>
           </form>
-
-          <script type="module">
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-            import {
-              getAuth,
-              createUserWithEmailAndPassword,
-            } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
-            import {
-              getFirestore,
-              setDoc,
-              doc,
-            } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-            import { firebaseConfig } from "../js/firebase-config.js";
-
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const auth = getAuth(app);
-            const db = getFirestore(app);
-
-            // Grab the form
-            const form = document.getElementById("signupForm");
-
-            form.addEventListener("submit", async (e) => {
-              e.preventDefault();
-
-              const username = document.getElementById("fullName").value.trim();
-              const email = document.getElementById("email").value.trim();
-              const password = document.getElementById("password").value;
-              const confirmPassword =
-                document.getElementById("confirmPassword").value;
-
-              // Validation
-              if (!username || !email || !password) {
-                alert("Please fill all fields.");
-                return;
-              }
-              if (password !== confirmPassword) {
-                alert("Passwords do not match.");
-                return;
-              }
-              if (password.length < 6) {
-                alert("Password must be at least 6 characters.");
-                return;
-              }
-
-              try {
-                // Create user
-                const userCredential = await createUserWithEmailAndPassword(
-                  auth,
-                  email,
-                  password
-                );
-                const user = userCredential.user;
-
-                // Save to Firestore
-                await setDoc(doc(db, "users", user.uid), {
-                  username,
-                  email,
-                  role: "buyer",
-                  createdAt: new Date().toISOString(),
-                });
-
-                alert("Account created successfully!");
-                console.log("User saved in Firestore");
-
-                // Optionally redirect
-                // window.location.href = "/dashboard.html";
-              } catch (err) {
-                alert(err.message);
-                console.error(err);
-              }
-            });
-          </script>
 
           <p class="text-center text-gray-500 mt-6 text-sm">
             Already have an account?
@@ -271,7 +213,7 @@
     </section>
 
     <!-- Firebase Modular SDK + Auth -->
-    <!-- <script type="module">
+    <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
       import {
         getAuth,
@@ -339,7 +281,7 @@
           console.log(err);
         }
       };
-    </script> -->
+    </script>
 
     <!-- <script src="../js/signup.js"></script> -->
   </body>
