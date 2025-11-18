@@ -32,15 +32,16 @@
 // });
 // console.log(myFn);
 
-async function getData() {
-  try{
-    const res = await fetch('https://randomuser.me/api/')
-    const data = await res.json();
-    console.group(data.results[0].cell)
-  }catch(err){
-    console.log({err})
-  }
-}
-getData()
-// const promise = fetch("https://api.example.com/data");
-// console.log(promise); 
+
+///////// PRACTICE ON 
+// async function getData() {
+//   try{
+//     const res = await fetch('https://randomuser.me/api/')
+//     const data = await res.json();
+//     console.group(data.results[0].cell)
+//   }catch(err){
+//     console.log({err})
+//   }
+// }
+// getData()
+

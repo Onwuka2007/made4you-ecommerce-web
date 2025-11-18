@@ -7,6 +7,9 @@
     <meta name="description" content="Wear Value. Support Change" />
     <link rel="stylesheet" href="./output.css" />
 
+    <!-- Aos -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
     <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@400;500;600;700&display=swap"
@@ -40,79 +43,334 @@
     <!-- Navbar -->
     <header
       id="header"
-      class="flex items-center justify-between px-6 md:px-20 py-6 fixed top-0 left-0 w-full z-20"
+      class="flex items-center justify-between px-6 py-4 fixed top-0 left-0 w-full z-20"
     >
-      <!-- Logo -->
-      <div
-        class="p-0.5 size-11 bg-black rounded-full text-white text-xs font-bold overflow-hidden"
+      <!-- White Menu Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        class="cursor-pointer whiteMenuIcon md:hidden"
       >
-        <img src="./assets/images/logo.png" alt="m4u" />
-      </div>
+        <rect width="24" height="24" fill="none" />
+        <path
+          fill="none"
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+          d="M4 6h16M4 12h8m-8 6h16"
+        />
+      </svg>
 
-      <div class="flex items-center gap-5">
-        <button
-          class="hidden md:block text-black font-medium bg-white/80 hover:bg-white/90 px-4 py-2 rounded-full cursor-pointer transition-colors duration-300"
-        >
-          <i class="fa-solid fa-bars mr-1"></i>
-          <span>Menu</span>
-        </button>
-        <!-- Center Menu -->
-        <div
-          class="hidden md:flex items-center gap-3 bg-white/80 px-4 py-2 rounded-full shadow-sm border border-gray-200"
-        >
-          <input
-            type="text"
-            placeholder="Search for Lighting"
-            class="ml-2 text-sm text-gray-500 outline-none w-120 bg-transparent"
-          />
+      <!-- Black Menu Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        class="cursor-pointer hidden blackMenuIcon md:hidden"
+      >
+        <rect width="24" height="24" fill="none" />
+        <path
+          fill="none"
+          stroke="#000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+          d="M4 6h16M4 12h8m-8 6h16"
+        />
+      </svg>
 
-          <datalist id="search-suggestions">
-            <option value="JavaScript"></option>
-            <option value="CSS"></option>
-            <option value="Accessibility"></option>
-            <option value="Web Design"></option>
-          </datalist>
-          <i class="fa-solid fa-magnifying-glass text-gray-600"></i>
-        </div>
-      </div>
+      <!-- Logos -->
+      <a href="https://made4you.vercel.app/">
+        <img
+          src="./assets/icons/whiteLogo.svg"
+          alt="logom4u"
+          id="blackLogo"
+          class="h-12 md:h-15"
+        />
+        <img
+          src="./assets/icons/blackLogo.svg"
+          alt="logom4u"
+          id="whiteLogo"
+          class="h-12 md:h-15 hidden"
+        />
+      </a>
+
+      <!-- middle list -->
+      <ul
+        id="blackListItems"
+        class="hidden md:flex items-center md:gap-4 text-white lg:gap-6 text-sm font-medium"
+      >
+        <li
+          class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
+        >
+          <a href="index.html">Explore</a>
+        </li>
+        <li
+          class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
+        >
+          <a href="./pages/about.html">Shop</a>
+        </li>
+        <li
+          class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
+        >
+          <a href="./pages/investors.html"></a>
+        </li>
+        <li
+          class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
+        >
+          <a href="./pages/members_stories.html">Member Stories</a>
+        </li>
+        <li
+          class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
+        >
+          <a href="./pages/join_tribearc.html">Join Tribearc</a>
+        </li>
+      </ul>
 
       <!-- Icons -->
       <div id="icons" class="flex items-center gap-5 text-white">
-        <a href="./pages/redirect.html" class="relative">
-          <i class="fa-solid fa-cart-shopping cursor-pointer"></i>
-          <span
-            class="absolute right-0 size-2 rounded-full bg-green-400"
-          ></span>
-        </a>
         <a href="./pages/redirect.html">
-          <i class="fa-regular fa-user cursor-pointer"></i
-        ></a>
+          <!-- white cart icon -->
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="cursor-pointer whiteIcon hover:-translate-y-0.5 duration-300"
+          >
+            <rect width="24" height="24" fill="none" />
+            <g fill="none" stroke="#fff" stroke-width="1">
+              <path stroke-linecap="round" d="M8 12V8a4 4 0 1 1 8 0v4" />
+              <path
+                d="M3.694 12.668c.145-1.741.218-2.611.792-3.14S5.934 9 7.681 9h8.639c1.746 0 2.62 0 3.194.528s.647 1.399.792 3.14l.514 6.166c.084 1.013.126 1.52-.17 1.843c-.298.323-.806.323-1.824.323H5.174c-1.017 0-1.526 0-1.823-.323s-.255-.83-.17-1.843z"
+              />
+            </g>
+          </svg>
+
+          <!-- black cart icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="cursor-pointer hidden blackIcon hover:-translate-y-0.5 duration-300"
+          >
+            <rect width="24" height="24" fill="none" />
+            <g fill="none" stroke="#000" stroke-width="1">
+              <path stroke-linecap="round" d="M8 12V8a4 4 0 1 1 8 0v4" />
+              <path
+                d="M3.694 12.668c.145-1.741.218-2.611.792-3.14S5.934 9 7.681 9h8.639c1.746 0 2.62 0 3.194.528s.647 1.399.792 3.14l.514 6.166c.084 1.013.126 1.52-.17 1.843c-.298.323-.806.323-1.824.323H5.174c-1.017 0-1.526 0-1.823-.323s-.255-.83-.17-1.843z"
+              />
+            </g>
+          </svg>
+        </a>
+
+        <a href="./pages/redirect.html">
+          <!-- white user icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="cursor-pointer whiteUserIcon hover:-translate-y-0.5 duration-300"
+          >
+            <rect width="24" height="24" fill="none" />
+            <g
+              fill="none"
+              stroke="#fff"
+              stroke-dasharray="28"
+              stroke-dashoffset="28"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+            >
+              <path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  dur="0.4s"
+                  values="28;0"
+                />
+              </path>
+              <path
+                d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z"
+              >
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  begin="0.4s"
+                  dur="0.4s"
+                  values="28;0"
+                />
+              </path>
+            </g>
+          </svg>
+
+          <!-- black user icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="cursor-pointer hidden blackUserIcon hover:-translate-y-0.5 duration-300"
+          >
+            <rect width="24" height="24" fill="none" />
+            <g
+              fill="none"
+              stroke="#000"
+              stroke-dasharray="28"
+              stroke-dashoffset="28"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+            >
+              <path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  dur="0.4s"
+                  values="28;0"
+                />
+              </path>
+              <path
+                d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z"
+              >
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  begin="0.4s"
+                  dur="0.4s"
+                  values="28;0"
+                />
+              </path>
+            </g>
+          </svg>
+        </a>
       </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden transition duration-300"
+    >
+      <div
+        class="w-[85%] sm:w-[70%] h-full bg-[#FBF7F2] shadow-xl p-6 flex flex-col"
+      >
+        <!-- Top Row -->
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-semibold tracking-wide text-gray-800">
+            Menu
+          </h2>
+          <button id="closeMenu" class="cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <rect width="24" height="24" fill="none" />
+              <path
+                fill="none"
+                stroke="#000"
+                stroke-dasharray="12"
+                stroke-dashoffset="12"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1"
+                d="M12 12l7 7M12 12l-7 -7M12 12l-7 7M12 12l7 -7"
+              >
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  dur="0.3s"
+                  values="12;0"
+                />
+              </path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menu mobile -->
+        <div class="space-y-4 flex flex-col justify-between h-full">
+          <div>
+            <div class="border-b border-gray-200 pb-3">
+              <button
+                class="flex justify-between w-full items-center section-btn"
+              >
+                <div class="flex items-center gap-0.5">
+                  <span class="text-gray-800 tracking-wide">Shop</span>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                  >
+                    <rect width="16" height="16" fill="none" />
+                    <path
+                      fill="#000"
+                      fill-rule="evenodd"
+                      d="m8 10.207l3.854-3.853l-.707-.708L8 8.793L4.854 5.646l-.708.708z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden pl-4 pt-2 space-y-2 section-content">
+                <p class="text-sm text-gray-600">Clothing</p>
+                <p class="text-sm text-gray-600">Shoes</p>
+                <p class="text-sm text-gray-600">Accessories</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="pt-6 space-y-5">
+              <a href="#" class="flex items-center gap-3 text-gray-700">
+                Find a store
+              </a>
+              <a href="#" class="flex items-center gap-3 text-gray-700">
+                Account
+              </a>
+              <a href="#" class="flex items-center gap-3 text-gray-700">
+                Contact us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section
       class="relative flex items-center justify-center min-h-screen bg-fixed bg-cover bg-center text-white pt-10 md:pt-20"
       style="
-        background-image: url('./assets/images/hero-section-backdrop-image.webp');
+        background-image: url('https://assets.hermes.com/is/image/hermesedito/HEADER%2016-9?fit=wrap%2C0&wid=1280&resMode=sharp2&op_usm=1%2C1%2C6%2C0');
       "
     >
       <div class="absolute inset-0 bg-black/50"></div>
 
       <div class="relative z-10 text-center px-5 md:px-20 max-w-3xl space-y-8">
         <h1
-          class="text-5xl md:text-7xl leading-tight font-semibold gradient-text"
+          class="text-5xl md:text-6xl font-light gradient-text uppercase tracking-wider"
+          style="font-family: 'Playfair Display SC', serif"
+          data-aos="fade-down"
+          data-aos-delay="100"
         >
-          made4you
+          made4u
         </h1>
-        <span class="text-3xl md:text-5xl block italic font-serif mt-2"
+        <span
+          class="text-xl md:text-2xl lg:text-4xl block italic font-serif mt-2 font-bold tracking-widest"
+          data-aos="fade-up"
+          data-aos-delay="100"
           >Wear Value. Support Change</span
         >
-
-        <p class="text-gray-200 leading-relaxed max-w-2xl mx-auto">
-          Make a statement with every outfit and back local peacebuilders
-          through our eco-friendly, sustainable merchandise.
-        </p>
 
         <!-- Buttons -->
         <div
@@ -120,18 +378,16 @@
         >
           <button
             class="bg-white text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition cursor-pointer"
+            data-aos="fade-right"
+            data-aos-delay="100"
           >
             Order Now
           </button>
           <button
-            class="flex items-center gap-2 rounded-full px-2 py-1 hover:bg-white/10 transition-colors duration-200 cursor-pointer"
+            class="flex items-center gap-2 rounded-full px-2 py-1 hover:bg-white/10 backdrop-blur-md border border-white/10 transition-colors duration-200 cursor-pointer"
+            data-aos="fade-left"
+            data-aos-delay="100"
           >
-            <!-- <img
-              src="./assets/icons/play.svg"
-              alt="play"
-              class="w-10 h-10 border p-2.5 rounded-full"
-            /> -->
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -159,7 +415,7 @@
     <!-- About section -->
     <section
       id="about"
-      class="max-w-6xl mx-auto px-4 md:px-20 py-20 flex flex-col md:flex-row items-center gap-12"
+      class="max-w-6xl mx-auto px-4 md:px-10 lg:px-20 py-20 flex flex-col md:flex-row items-center gap-12"
     >
       <!-- Left Text -->
       <div class="flex-1 space-y-6 z-10">
@@ -167,7 +423,7 @@
           About Us
         </h3>
         <h2
-          class="text-4xl md:text-5xl font-semibold leading-tight text-gray-900"
+          class="text-4xl lg:text-5xl font-semibold leading-tight text-gray-900"
         >
           We exist to make local fashion <br />
           <span
@@ -176,7 +432,7 @@
             visible and valued.
           </span>
         </h2>
-        <p class="text-gray-700 max-w-md">
+        <p class="text-gray-700 max-w-md font-medium">
           Made4You connects Nigerian creators to people who care about real
           quality. Every piece you buy isn’t just fashion, it’s a story of
           craft, culture, and creativity.
@@ -184,7 +440,7 @@
         <div class="flex gap-4">
           <a
             href="#explore"
-            class="px-6 py-3 bg-black text-white rounded-full hover:bg-black/90 transition"
+            class="px-6 py-3 bg-black text-white rounded-full hover:bg-black/80 transition"
           >
             Explore Collections
           </a>
@@ -203,7 +459,7 @@
       >
         <div class="relative w-full h-full overflow-hidden">
           <div
-            class="absolute top-0 right-6 md:right-10 bg-white/80 backdrop-blur-md border border-white/30 p-5 rounded-2xl shadow-md w-56 md:w-64 transform rotate-2 hover:rotate-0 transition"
+            class="absolute top-10 lg:top-0 right-6 md:right-10 bg-white/80 backdrop-blur-md border border-white/30 p-5 rounded-2xl shadow-md w-56 md:w-64 transform rotate-2 hover:rotate-0 transition"
           >
             <p class="text-gray-700 italic">
               “Got my first 20 orders through Made4You. Real people, real
@@ -223,7 +479,7 @@
           </div>
 
           <div
-            class="absolute top-1/2 left-1/3 bg-white/80 backdrop-blur-md border border-white/30 p-5 rounded-2xl shadow-md w-56 md:w-64 transform rotate-1 -translate-y-1/2 hover:rotate-0 transition"
+            class="absolute top-1/2 lg:left-1/3 bg-white/80 backdrop-blur-md border border-white/30 p-5 rounded-2xl shadow-md w-56 md:w-64 transform rotate-1 -translate-y-1/2 hover:rotate-0 transition"
           >
             <p class="text-gray-700 italic">
               “The interface is smooth, but the mission is even better.”
@@ -258,7 +514,7 @@
     <!-- Explore collections -->
     <section
       id="products"
-      class="bg-linear-to-t from-[#d4c5b0]/30 via-[#c9b89a]/50 to-[#e5e5e1] py-24 px-4 md:px-20"
+      class="bg-linear-to-t from-[#d4c5b0]/30 via-[#c9b89a]/50 to-[#e5e5e1] py-24 px-4 md:px-10 lg:px-20"
     >
       <!-- Header -->
       <div class="flex items-center justify-between mb-10">
@@ -296,7 +552,7 @@
       <!-- Cards Wrapper -->
       <div
         id="tab-content"
-        class="grid grid-col sm:grid-cols-2 md:grid-cols-3 gap-10 transition-all duration-500"
+        class="grid grid-col sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 transition-all duration-500"
       >
         <!-- jsut the clothes -->
         <div
@@ -386,7 +642,7 @@
 
     <!-- Why choose us -->
     <section
-      class="relative flex flex-col items-center justify-center bg-fixed bg-cover bg-center text-white py-24 px-4 md:px-20"
+      class="relative flex flex-col items-center justify-center bg-fixed bg-cover bg-center text-white py-24 px-4 md:px-10 lg:px-20"
       style="background-image: url('./assets/images/second_backdrop_image.jpg')"
     >
       <div class="absolute inset-0 bg-black/60"></div>
@@ -421,7 +677,7 @@
               />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white">Empower Local Brands</h3>
+          <h3 class="text-lg font-semibold text-white">Empower Local Brands</h3>
           <p class="text-gray-200 max-w-xs">
             We give Nigerian creators and entrepreneurs a platform to reach more
             people, grow faster, and get recognized beyond their local markets.
@@ -476,9 +732,7 @@
               />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white">
-            Build a Community That Buys Local
-          </h3>
+          <h3 class="text-lg font-semibold text-white">Local Buyers</h3>
           <p class="text-gray-200 max-w-xs">
             Be part of a movement that celebrates homegrown quality. Every
             purchase made supports a story, a dream, and a future built right
@@ -661,7 +915,7 @@
 
     <!-- Footer section -->
     <footer
-      class="relative bg-gray-900 text-white bg-fixed bg-cover bg-center py-16 md:py-20"
+      class="relative bg-gray-900 text-white bg-fixed bg-cover bg-center py-16 md:py-10 lg:py-20"
       style="background-image: url('./assets/images/made4u_logo_black_bg.png')"
     >
       <div class="absolute inset-0 bg-black/70"></div>
@@ -785,6 +1039,14 @@
         </div>
       </div>
     </section> -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
 
     <script src="./js/script.js"></script>
   </body>

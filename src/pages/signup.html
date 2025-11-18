@@ -8,9 +8,10 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="shortcut icon"
       href="../assets/icons/favicon.ico"
@@ -125,9 +126,7 @@
 
           <p class="text-center text-gray-500 mt-6 text-sm">
             Already have an account?
-            <a
-              href="/login"
-              class="text-black font-medium hover:underline"
+            <a href="/login" class="text-black font-medium hover:underline"
               >Log In</a
             >
           </p>
@@ -152,7 +151,11 @@
         const password = document.getElementById("password").value;
 
         try {
-          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
           console.log("✅ User created:", userCredential.user);
           alert("Account created successfully!");
         } catch (err) {
@@ -162,6 +165,6 @@
       };
     </script>
 
-    <script src="../js/signup.js"></script>
+    <!-- <script src="../js/signup.js"></script> -->
   </body>
 </html>

@@ -369,15 +369,52 @@ backToTopBtn.addEventListener("click", () => {
 
 // Show header after scrolling down
 const header = document.getElementById("header");
-const icons = document.getElementById("icons");
+
+const blackIcons = document.querySelector(".blackIcon");
+const whiteIcons = document.querySelector(".whiteIcon");
+
+const blackUserIcon = document.querySelector(".blackUserIcon");
+const whiteUserIcon = document.querySelector(".whiteUserIcon");
+
+const whiteMenuIcon = document.querySelector(".whiteMenuIcon");
+const blackMenuIcon = document.querySelector(".blackMenuIcon");
+
+const blackLogo = document.getElementById("blackLogo");
+const whiteLogo = document.getElementById("whiteLogo");
+
+const blackListItems = document.getElementById("blackListItems");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 600) {
     header.classList.add("header-backdrop");
-    icons.classList.remove("text-white");
+    blackIcons.classList.remove("hidden");
+    whiteIcons.classList.add("hidden");
+
+    whiteMenuIcon.classList.add("hidden");
+    blackMenuIcon.classList.remove("hidden");
+
+    blackUserIcon.classList.remove("hidden");
+    whiteUserIcon.classList.add("hidden");
+
+    blackLogo.classList.add("hidden");
+    whiteLogo.classList.remove("hidden");
+    blackListItems.classList.remove("text-white");
   } else {
     header.classList.remove("header-backdrop");
+    blackIcons.classList.add("hidden");
+    whiteIcons.classList.remove("hidden");
+
+    blackUserIcon.classList.add("hidden");
+    whiteUserIcon.classList.remove("hidden");
+
     icons.classList.add("text-white");
+    blackLogo.classList.remove("hidden");
+
+    whiteMenuIcon.classList.remove("hidden");
+    blackMenuIcon.classList.add("hidden");
+
+    whiteLogo.classList.add("hidden");
+    blackListItems.classList.add("text-white");
   }
 });
 
@@ -415,3 +452,32 @@ function subscribeModal() {
 }
 
 setTimeout(subscribeModal, 3000);
+
+//stop animation
+const partners = document.getElementById("partners");
+const animationScroll = document.querySelector(".animate-scroll");
+partners.addEventListener("mouseover", () => {
+  animationScroll.classList.add("stop-scroll");
+});
+partners.addEventListener("mouseout", () => {
+  animationScroll.classList.remove("stop-scroll");
+});
+
+
+// Open & close mobile menu
+const openMenuWhiteBtn = document.querySelector(".whiteMenuIcon");
+const openMenuBlackBtn = document.querySelector(".blackMenuIcon");
+const closeMenu = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+
+openMenuWhiteBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("hidden");
+});
+openMenuBlackBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("hidden");
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.add("hidden");
+});
+

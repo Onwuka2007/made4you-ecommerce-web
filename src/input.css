@@ -3,17 +3,22 @@
 /* Cutomisation */
 
 @theme {
-  --font-serif: "Quintessential", serif;
+  --font-serif: "Inter", sans-serif;
+}
+
+p {
+  /* font-weight: 400; */
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /* Header style */
-
 .header-backdrop {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
 }
 body {
   font-family: "Montserrat", sans-serif;
@@ -22,7 +27,7 @@ body {
 
 /* made4u text */
 .gradient-text {
-  background: linear-gradient(to right, #f3f4f6 0%, #d1d5db 50%, #9ca3af 100%);
+  background: linear-gradient(to right, #ffffff 0%, #fdfdfd 50%, #f1dba8 80%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -42,8 +47,13 @@ body {
 .animate-scroll {
   display: flex;
   width: max-content;
-  animation: scroll 25s linear infinite;
+  animation: scroll 23s linear infinite;
 }
+
+.stop-scroll{
+  animation-play-state: paused;
+}
+
 
 /* hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
@@ -57,7 +67,6 @@ body {
 
 @media (min-width: 768px) {
   .header-backdrop {
-    justify-content: space-evenly;
-    padding: 18px 0px;
+    padding: 3px 30px;
   }
 }
