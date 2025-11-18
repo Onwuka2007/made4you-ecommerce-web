@@ -127,7 +127,7 @@
             collections.
           </p>
 
-          <form class="space-y-5">
+          <form class="space-y-5 form">
             <div>
               <label
                 class="text-sm font-medium leading-normal sr-only"
@@ -190,10 +190,9 @@
                 class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
               />
             </div>
-
+            <!-- onclick="register()" -->
             <button
-              type="button"
-              onclick="register()"
+              type="submit"
               class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer mt-5"
             >
               Sign Up
@@ -213,28 +212,12 @@
     </section>
 
     <!-- Firebase Modular SDK + Auth -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-      import {
-        getAuth,
-        createUserWithEmailAndPassword,
-      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+    <script>
+      const form = document.querySelector("form");
 
-      import {
-        getFirestore,
-        setDoc,
-        doc,
-      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // prevent form from refreshing page
 
-      import { firebaseConfig } from "../js/firebase-config.js";
-
-      // init
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      const db = getFirestore(app);
-
-      // register fn for the submit btn
-      window.register = async () => {
         const username = document.getElementById("fullName").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
@@ -278,11 +261,10 @@
           console.log("User saved in Firestore");
         } catch (err) {
           alert(err.message);
-          console.log(err);
+          console.error(err);
         }
-      };
+      });
     </script>
-
     <!-- <script src="../js/signup.js"></script> -->
   </body>
 </html>
