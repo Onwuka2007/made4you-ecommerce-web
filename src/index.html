@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +31,7 @@
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="./assets/icons/favicon.ico"
+      href="./assets/icons/favicon.svg"
       type="image/x-icon"
     />
 
@@ -107,27 +107,29 @@
         <li
           class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
         >
-          <a href="index.html">Explore</a>
+          <a href="#products">Explore</a>
         </li>
         <li
           class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
         >
           <a href="./pages/about.html">Shop</a>
         </li>
+
         <li
           class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
         >
-          <a href="./pages/investors.html"></a>
+          <a href="./pages/sellerSignup.html">Become a Partner</a>
         </li>
         <li
           class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
         >
-          <a href="./pages/members_stories.html">Member Stories</a>
+          <a href="#aboutUs">About Us</a>
         </li>
+
         <li
           class="cursor-pointer transition hover:-translate-y-0.5 duration-300"
         >
-          <a href="./pages/join_tribearc.html">Join Tribearc</a>
+          <a href="#faq">FAQs</a>
         </li>
       </ul>
 
@@ -299,46 +301,84 @@
         <!-- Menu mobile -->
         <div class="space-y-4 flex flex-col justify-between h-full">
           <div>
+            <!-- explore -->
             <div class="border-b border-gray-200 pb-3">
               <button
                 class="flex justify-between w-full items-center section-btn"
               >
                 <div class="flex items-center gap-0.5">
-                  <span class="text-gray-800 tracking-wide">Shop</span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                  >
-                    <rect width="16" height="16" fill="none" />
-                    <path
-                      fill="#000"
-                      fill-rule="evenodd"
-                      d="m8 10.207l3.854-3.853l-.707-.708L8 8.793L4.854 5.646l-.708.708z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+                  <a href="#products"class="text-gray-800 tracking-wide">Explore</a>
                 </div>
               </button>
-              <div class="hidden pl-4 pt-2 space-y-2 section-content">
-                <p class="text-sm text-gray-600">Clothing</p>
-                <p class="text-sm text-gray-600">Shoes</p>
-                <p class="text-sm text-gray-600">Accessories</p>
-              </div>
+            </div>
+
+            <!-- shop -->
+            <div class="border-b border-gray-200 py-3">
+              <button
+                class="flex justify-between w-full items-center section-btn"
+              >
+                <div class="flex items-center gap-0.5">
+                  <a href="" class="text-gray-800 tracking-wide">Shop</a>
+                </div>
+              </button>
+            </div>
+
+            <!-- partner -->
+            <div class="border-b border-gray-200 py-3">
+              <button
+                class="flex justify-between w-full items-center section-btn"
+              >
+                <div class="flex items-center gap-0.5">
+                  <a href="./pages/sellerSignup.html"
+                    class="text-gray-800 tracking-wide"
+                    >Become a Partner</a
+                  >
+                </div>
+              </button>
+            </div>
+
+            <!-- about -->
+            <div class="border-b border-gray-200 py-3">
+              <button
+                class="flex justify-between w-full items-center section-btn"
+              >
+                <div class="flex items-center gap-0.5">
+                  <a href="#aboutUs"class="text-gray-800 tracking-wide">About Us</a>
+                </div>
+              </button>
+            </div>
+
+            <!-- faq -->
+            <div class="border-b border-gray-200 py-3">
+              <button
+                class="flex justify-between w-full items-center section-btn"
+              >
+                <div class="flex items-center gap-0.5">
+                  <a href="#faq"class="text-gray-800 tracking-wide">FAQs</a>
+                </div>
+              </button>
             </div>
           </div>
 
+          <!-- bottom links -->
           <div>
-            <div class="pt-6 space-y-5">
-              <a href="#" class="flex items-center gap-3 text-gray-700">
-                Find a store
+            <div class="pt-6 space-y-2 w-fit">
+              <a
+                href="#"
+                class="flex items-center gap-3 text-gray-500 hover:text-black text-sm font-medium hover:underline"
+              >
+                Report a problem
               </a>
-              <a href="#" class="flex items-center gap-3 text-gray-700">
+              <a
+                href="#"
+                class="flex items-center gap-3 text-gray-500 hover:text-black text-sm font-medium hover:underline"
+              >
                 Account
               </a>
-              <a href="#" class="flex items-center gap-3 text-gray-700">
+              <a
+                href="#"
+                class="flex items-center gap-3 text-gray-500 hover:text-black text-sm font-medium hover:underline"
+              >
                 Contact us
               </a>
             </div>
@@ -376,45 +416,50 @@
         <div
           class="flex flex-wrap justify-center gap-4 pt-2 text-sm md:text-base"
         >
-          <button
-            class="bg-white text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition cursor-pointer"
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
-            Order Now
-          </button>
-          <button
-            class="flex items-center gap-2 rounded-full px-2 py-1 hover:bg-white/10 backdrop-blur-md border border-white/10 transition-colors duration-200 cursor-pointer"
-            data-aos="fade-left"
-            data-aos-delay="100"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              class="w-10 h-10 border p-2.5 rounded-full"
+          <a href="./pages/signup.html">
+            <button
+              class="bg-white text-gray-900 text-md font-medium px-6 py-3 rounded-full hover:bg-gray-200 transition cursor-pointer"
+              data-aos="fade-right"
+              data-aos-delay="100"
             >
-              <rect width="24" height="24" fill="none" />
-              <path
-                fill="none"
-                stroke="#fff"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-miterlimit="10"
-                stroke-width="1.5"
-                d="m14 16l4-4m0 0l-4-4m4 4H6"
-              />
-            </svg>
-            <span>Join as a Brand</span>
-          </button>
+              Order Now
+            </button>
+          </a>
+
+          <a href="./pages/sellerSignup.html">
+            <button
+              class="flex items-center gap-2 rounded-full px-2 py-1 hover:bg-white/10 backdrop-blur-md border border-white/10 transition-colors duration-200 cursor-pointer"
+              data-aos="fade-left"
+              data-aos-delay="100"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="w-10 h-10 border p-2.5 rounded-full"
+              >
+                <rect width="24" height="24" fill="none" />
+                <path
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-miterlimit="10"
+                  stroke-width="1.5"
+                  d="m14 16l4-4m0 0l-4-4m4 4H6"
+                />
+              </svg>
+              <span>Join as a Brand</span>
+            </button>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- About section -->
     <section
-      id="about"
+      id="aboutUs"
       class="max-w-6xl mx-auto px-4 md:px-10 lg:px-20 py-20 flex flex-col md:flex-row items-center gap-12"
     >
       <!-- Left Text -->
@@ -439,7 +484,7 @@
         </p>
         <div class="flex gap-4">
           <a
-            href="#explore"
+            href="./pages/buyerSignup.html"
             class="px-6 py-3 bg-black text-white rounded-full hover:bg-black/80 transition"
           >
             Explore Collections
@@ -752,7 +797,7 @@
           Explore Collection
         </a>
         <a
-          href=""
+          href="./pages/sellerSignup.html"
           class="px-6 py-3 border border-gray-400 rounded-full hover:bg-white/10 transition"
         >
           Become a Partner

@@ -463,7 +463,6 @@ partners.addEventListener("mouseout", () => {
   animationScroll.classList.remove("stop-scroll");
 });
 
-
 // Open & close mobile menu
 const openMenuWhiteBtn = document.querySelector(".whiteMenuIcon");
 const openMenuBlackBtn = document.querySelector(".blackMenuIcon");
@@ -481,3 +480,14 @@ closeMenu.addEventListener("click", () => {
   mobileMenu.classList.add("hidden");
 });
 
+// Remove when links is clicked
+const mobileLinks = mobileMenu.querySelectorAll("a");
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    open = false;
+    mobileMenu.classList.add("hidden");
+    mobileMenu.classList.remove("flex");
+    document.body.style.overflowY = "auto";
+    spinMenuBtn();
+  });
+});
