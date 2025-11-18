@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sartoria Nigeria - Modern Nigerian Fashion</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#000000",
+              "background-light": "#FDFDFD",
+              "background-dark": "#0a0a0a",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .group:hover .group-hover\:opacity-100 {
+        opacity: 1;
+      }
+      .group:hover .group-hover\:translate-y-0 {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#000000] dark:text-[#FDFDFD]"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <!-- TopNavBar -->
+      <header
+        class="sticky top-0 z-50 w-full bg-[#000000] text-[#FDFDFD] shadow-md"
+      >
+        <div
+          class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-4"
+        >
+          <div class="flex items-center gap-4">
+            <div class="size-6 text-[#FDFDFD]">
+              <svg
+                fill="currentColor"
+                viewbox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                ></path>
+              </svg>
+            </div>
+            <h1 class="text-xl font-bold leading-tight tracking-[-0.015em]">
+              Sartoria
+            </h1>
+          </div>
+          <nav class="hidden items-center gap-9 md:flex">
+            <a
+              class="text-sm font-medium leading-normal text-[#FDFDFD] hover:text-[#888888] transition-colors"
+              href="#"
+              >New Arrivals</a
+            >
+            <a
+              class="text-sm font-medium leading-normal text-[#FDFDFD] hover:text-[#888888] transition-colors"
+              href="#"
+              >Men</a
+            >
+            <a
+              class="text-sm font-medium leading-normal text-[#FDFDFD] hover:text-[#888888] transition-colors"
+              href="#"
+              >Women</a
+            >
+            <a
+              class="text-sm font-medium leading-normal text-[#FDFDFD] hover:text-[#888888] transition-colors"
+              href="#"
+              >Accessories</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full hover:bg-white/10 transition-colors"
+            >
+              <span class="material-symbols-outlined text-2xl">search</span>
+            </button>
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full hover:bg-white/10 transition-colors"
+            >
+              <span class="material-symbols-outlined text-2xl">person</span>
+            </button>
+            <button
+              class="relative flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full hover:bg-white/10 transition-colors"
+            >
+              <span class="material-symbols-outlined text-2xl"
+                >shopping_bag</span
+              >
+              <span
+                class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#FDFDFD] text-xs font-bold text-[#000000]"
+                >2</span
+              >
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-grow">
+        <!-- HeroSection -->
+        <div class="relative w-full">
+          <div
+            class="flex min-h-[60vh] max-h-[800px] flex-col items-center justify-center gap-6 bg-cover bg-center bg-no-repeat p-4 sm:gap-8"
+            data-alt="A stylish model wearing a piece from the Heritage Collection in a minimalist setting."
+            style="
+              background-image: linear-gradient(
+                  rgba(0, 0, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.4) 100%
+                ),
+                url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEJqX6V-ZuJU_79_LSb77Jy_LCUhoOKxrJ_xzW0DlE5w-SP81UM9l5iqomDDttlA11JNqgvU7uQuj31F1uNZxdDyjnFjBMcSvNkjcjQL5XdTQyhPts_aPXOQ1xTXtmafT3SdZDJeDpAmYrRqJbBaffCqmIUAEnbDiUJiLlG0WIHwhXgmNxwEPErlIu1_D4JI-Opjg8G5mzS4GQTiSL7xtOLio_H1zD9lCGIA62Gh-HdUso59s0_ur7Lx43PMyRHcv00X7iX0tOdj-z');
+            "
+          >
+            <div class="flex flex-col gap-2 text-center text-white">
+              <h2
+                class="text-4xl font-black leading-tight tracking-[-0.033em] sm:text-6xl"
+              >
+                The Heritage Collection
+              </h2>
+              <p class="text-base font-normal leading-normal sm:text-lg">
+                Discover timeless pieces crafted with tradition and modern
+                style.
+              </p>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 sm:h-14 sm:px-8 bg-background-light text-[#000000] dark:bg-background-dark dark:text-[#FDFDFD] text-sm font-bold uppercase tracking-widest transition-transform hover:scale-105 sm:text-base"
+            >
+              <span class="truncate">Discover Now</span>
+            </button>
+          </div>
+        </div>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+          <!-- Chips/Filtering Bar -->
+          <div
+            class="flex flex-wrap items-center gap-3 border-y border-[#EAEAEA] dark:border-[#222222] py-4 mb-8"
+          >
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md border border-[#EAEAEA] dark:border-[#222222] bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-black/5 dark:hover:bg-white/5"
+            >
+              <p class="text-sm font-medium leading-normal">Category</p>
+              <span class="material-symbols-outlined text-xl">expand_more</span>
+            </button>
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md border border-[#EAEAEA] dark:border-[#222222] bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-black/5 dark:hover:bg-white/5"
+            >
+              <p class="text-sm font-medium leading-normal">Size</p>
+              <span class="material-symbols-outlined text-xl">expand_more</span>
+            </button>
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md border border-[#EAEAEA] dark:border-[#222222] bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-black/5 dark:hover:bg-white/5"
+            >
+              <p class="text-sm font-medium leading-normal">Price Range</p>
+              <span class="material-symbols-outlined text-xl">expand_more</span>
+            </button>
+            <div class="flex-grow"></div>
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md border border-[#EAEAEA] dark:border-[#222222] bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-black/5 dark:hover:bg-white/5"
+            >
+              <p class="text-sm font-medium leading-normal">Sort by: Newest</p>
+              <span class="material-symbols-outlined text-xl">expand_more</span>
+            </button>
+          </div>
+          <!-- ImageGrid -->
+          <div
+            class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-6"
+          >
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="Model wearing a modern adire print t-shirt"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAUY5JCWROAExCXtqFmLbdAlmgBsogFeGGQjlceWYy02J716LtWDYkcJuUKYLYkUhpPKsrH8MEUMUEs_J3tMXo_oiHtW38pByI37JjzVD9M7B4Q_RdQ2f1RAnKnby5tp0eVFLO7HBSCQCNnAeCtJjxzqjotARrnqac44Y-FZBY1lgM0eo6Mmm3_N3cThqNXHYVwNN_zkLsyXB2oQpzB6_i6BTmrvrnmccrxuq_C3XEkdoqnP2rw67AH7WhPX_Pfs9DN5wq9rwLLvyf');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Adire Print Shirt
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Lagos Threads
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦15,000</p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="A pair of expertly woven aso-oke trousers"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYxqnz3wJ9L7jr8zDzgNRz7XHynffEQvvBA9ulPpNldsBw9fQlC3wt0Yc4fwFHAFWu3i7lmZUWlEuO0qm3UAdjcFY5GiwMgZiNCqgPm8nnUm-ZPYDuyaKjwS74hzlr5XSeo23z86QodiNHRATBI1Pb67d2LW3vYGGRJ0oOJNHZhATwtjpjEpULjOdQeUqQ2ZdVJIZaQgIIxYU4uqoj6_YqA5bknnKSirvZ5HXqiy6goniOaKEjbKYQ2TUOG0RxjkV7EZkdgB9QrdBr');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Woven Aso-Oke Trousers
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Ibadan Weavers
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦22,500</p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="A vibrant ankara maxi dress flowing gracefully"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpB8dwdXFXB_7_uAV9WHaVFn7uCuZ6r0f24MbNlgPFk9OJHaFiPWTR-L-fFXPEyjrJdCnU6WOgNwGWeyCGytqk4uG-Cr-qvjrsBHouWYLhUCCSbHiBibojCk85JPeC-CN77Ba4l7CoClWIYnpcihq0MO8vs_uMmpfiFpxkwFem5jOYdDuprCYQ7qlUNfJF9YiK0JCYgTA2EYHZOpnZ-d92CnI5luD9buwECWqgfmjdWxeUv7v28rn9grCI_Hs2cL1dKRf27_I4SeLa');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Ankara Maxi Dress
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Abuja Designs
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦25,000</p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="A dashiki with intricate beadwork on the neckline"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaRcUbyGOKVVANZLhBTJ9AMl09RBx8RKjO1X2JYb1pyD7TDH1jmgdjC4P_dHq3TEg8MmPYXcfZ3zAx7l-P9_cc-JUHgN0BXiGFn5L93CwAULSiW-Ios4nxbmvtrOBxrie4J1sW7q6TSeskcqLJLxiBZCLnpr1T2cm4wSLNa4-l2HNhyY2oiH-l558M2aegkWBTM5lDpx2C5iexYf_etcQ5RpjqVOCCXgwuNOm0067-p6Zqp6wqQrfp80im7IoKcmDl4ItHhKYOiFIp');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Beaded Dashiki
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Kano Kreations
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦18,000</p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="A flowing white linen agbada set"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2UGN3BwsEcjgipx37ii22kW4SEWzw7JBF6qc10ucl7grP9sRsAVFV7MIMdg0FLtDWEUWkL8C7UKCdxUIME9DRyU7Q5_rV5qOIwyd_PQQG3NrlsVwixxWG-f5GZhUM1jfCoCM3bGKstbUTfKnf0GA16x0oq1qDyXkgwrWH-S3LYB_RIh8xyeG-E8uuC51w_e3N0DAmWwxoVKe-Qcmcu77BZUaroG2_dzHTcs24jh-jQwYLsBeJ8cyVu2zsZt9tCptelCPYkaXxBjfc');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Linen Agbada Set
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Port Harcourt Style
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦35,000</p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="A colorful skirt with a traditional kente pattern"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX1K4mA9JX-if3JVNBtb_pIgDztNxAuJxU6E_ljVzT9F7NMOo5BQK88lOYLK2i6Qymcs2QeRk7XbIKWb_78J9uri6gj7sitWRU-YpZTm1ZxEM7DdZhNo-TxH3sbiS5VRq0VoDzj5baHspZUeVHpxAP1lEyWZDVNMR8ULbXtMRs87notD6jM_UzLTafppAdEElMkBJmgAA53TV9IvG57b8u7LS7FQ6xmxOcbNC5dPZQ9LvF9d1g0RE7JdrXNGzW-ArFz5F9zCR273Qp');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Kente Pattern Skirt
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Calabar Couture
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦12,000</p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="A stylish modern interpretation of a buba gown"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCB3KQNweY0bftLluE51bIbfltq2LyfpWS6OQ70Bz6LSAtSji-cWOxbwWO27DdpuUS34dmOmHzTHicoF03-mDb5uN3rKDco5kreI11U-4ZQObneqdm7qpC7dSG0jAGiZAy9UTgESIwTi2PmHpEixS4d07B6qMhNKrYFIDgy9triCMhe_ypALbMrPmw94qWbxicYkuNn_wl1ufMj93WfceXkdRxCDB3uW7mtAcso9qYD5UA1XuVwheHiCYKmgXhm0gjXhWNgqT1D2FoH');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Modern Buba Gown
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Enugu Elegance
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦28,000</p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col overflow-hidden">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover bg-[#EAEAEA] dark:bg-[#1a1a1a]"
+                data-alt="A men's tunic featuring the isiagu pattern"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgVuLEn3ERuwzeZjHv7U6hVZcBcC7TGbO-BGMi7Av0tQdspyMoasCqfOrIwoeogiqQlqbBa-yheWaNOLdOFnzGCopVxxqPj1K-UVPaqj1GKzik_pdvcPO09BNHxYtwM0b4N8UJCdM2igminazOFthEr1gpd0jsMzIGOnZcwDmZCz2-r7eAu3zBL-gMQsTFhKdAEwdHa0FZwZtQTuKPXRQg0vAtHSR8Sq38lPYheo9ol9oqDdG7TzaYHeqv73zd0rZutOiOjQBNUDa4');
+                "
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <button
+                  class="w-full bg-white/90 text-black text-sm font-bold py-2.5 rounded-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div class="pt-3">
+                <p class="text-base font-semibold leading-normal">
+                  Isiagu Tunic
+                </p>
+                <p class="text-sm font-normal leading-normal text-[#888888]">
+                  By Owerri Artistry
+                </p>
+                <p class="text-sm font-medium leading-normal pt-1">₦20,000</p>
+              </div>
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div class="flex items-center justify-center py-10 mt-8">
+            <a
+              class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >chevron_left</span
+              >
+            </a>
+            <a
+              class="text-sm font-bold flex size-10 items-center justify-center rounded-full bg-black text-white dark:bg-white dark:text-black"
+              href="#"
+              >1</a
+            >
+            <a
+              class="text-sm font-medium flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+              href="#"
+              >2</a
+            >
+            <a
+              class="text-sm font-medium flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+              href="#"
+              >3</a
+            >
+            <span
+              class="text-sm font-medium flex size-10 items-center justify-center rounded-full"
+              >...</span
+            >
+            <a
+              class="text-sm font-medium flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+              href="#"
+              >10</a
+            >
+            <a
+              class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >chevron_right</span
+              >
+            </a>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer class="bg-[#000000] text-[#FDFDFD]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <h3 class="font-bold uppercase tracking-wider text-sm mb-4">
+                Company
+              </h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >Press</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold uppercase tracking-wider text-sm mb-4">
+                Help
+              </h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >FAQ</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >Shipping &amp; Returns</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold uppercase tracking-wider text-sm mb-4">
+                Categories
+              </h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >Men</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >Women</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#888888] hover:text-white transition-colors"
+                    href="#"
+                    >Accessories</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold uppercase tracking-wider text-sm mb-4">
+                Follow Us
+              </h3>
+              <div class="flex space-x-4">
+                <a
+                  class="text-[#888888] hover:text-white transition-colors"
+                  href="#"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  class="text-[#888888] hover:text-white transition-colors"
+                  href="#"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  class="text-[#888888] hover:text-white transition-colors"
+                  href="#"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 4.119c.636-.247 1.363-.416 2.427-.465C9.793 3.666 10.147 3.655 12 3.655c.293 0 .553 0 .784.002.23.001.46.002.692.003h.001zm-.717 1.442h-.001c-1.896 0-2.167.007-2.914.042-1.02.046-1.587.21-1.942.365a3.174 3.174 0 00-1.15 1.15c-.155.355-.32.922-.365 1.942-.035.747-.042 1.018-.042 2.914s.007 2.167.042 2.914c.046 1.02.21 1.587.365 1.942a3.174 3.174 0 001.15 1.15c.355.155.922.32 1.942.365.747.035 1.018.042 2.914.042s2.167-.007 2.914-.042c1.02-.046 1.587-.21 1.942-.365a3.174 3.174 0 001.15-1.15c.155-.355.32-.922.365-1.942.035-.747.042-1.018.042-2.914s-.007-2.167-.042-2.914c-.046-1.02-.21-1.587-.365-1.942a3.174 3.174 0 00-1.15-1.15c-.355-.155-.922-.32-1.942-.365C13.481 3.447 13.21 3.44 11.343 3.44h.001z"
+                      fill-rule="evenodd"
+                    ></path>
+                    <path
+                      d="M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14a2 2 0 110-4 2 2 0 010 4z"
+                    ></path>
+                    <path d="M16.5 7.5a1 1 0 100-2 1 1 0 000 2z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-8 border-t border-[#222222] pt-6 text-center text-sm text-[#888888]"
+          >
+            <p>© 2024 Sartoria Nigeria. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

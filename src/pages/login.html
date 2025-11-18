@@ -71,11 +71,13 @@
         "
       >
         <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 mt-16 flex flex-col items-center justify-center text-center">
-          <h1 class="text-4xl font-serif font-bold tracking-tight mb-6">Welcome Back</h1>
-          <p class="text-gray-100 text-sm ">
-            You are signing in as a buyer.
-          </p>
+        <div
+          class="relative z-10 mt-16 flex flex-col items-center justify-center text-center"
+        >
+          <h1 class="text-4xl font-serif font-bold tracking-tight mb-6">
+            Welcome Back
+          </h1>
+          <p class="text-gray-100 text-sm">You are signing in as a buyer.</p>
         </div>
       </div>
 
@@ -103,12 +105,8 @@
           </a>
           <main class="w-full max-w-sm">
             <div class="text-center hidden md:block">
-              <h2 class="text-3xl font-bold tracking-tight">
-                Welcome Back
-              </h2>
-              <p class="mt-2 text-gray-600">
-               You are signing in as a buyer.
-              </p>
+              <h2 class="text-3xl font-bold tracking-tight">Welcome Back</h2>
+              <p class="mt-2 text-gray-600">You are signing in as a buyer.</p>
             </div>
             <form action="#" class="mt-8 space-y-6" method="POST">
               <div class="flex flex-col">
@@ -162,7 +160,7 @@
             <div class="mt-6 text-center text-sm">
               <p class="text-gray-500">
                 Don't have an account?
-                <a class="font-semibold text-black hover:underline" href="#"
+              <a  class="font-semibold text-black hover:underline" href="./signup.html"
                   >Sign up</a
                 >
               </p>
@@ -171,6 +169,64 @@
         </div>
       </div>
     </section>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+      import { firebaseConfig } from "../js/firebase-config.js";
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      const loginForm = document.querySelector("form");
+
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        if (!email || !password) {
+          alert("Fill in all fields");
+          return;
+        }
+
+        try {
+          // SIGN IN USER
+          const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+          const user = userCredential.user;
+
+          // FETCH USER DATA FROM FIRESTORE (optional)
+          const userDoc = await getDoc(doc(db, "users", user.uid));
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            console.log("Welcome", userData.username, "Role:", userData.role);
+          } else {
+            console.log("No additional user data found in Firestore");
+          }
+
+          alert("Logged in successfully!");
+          // Redirect or load dashboard
+          window.location.href = "./productListing.html";
+        } catch (err) {
+          alert(err.message);
+          console.error(err);
+        }
+      });
+    </script>
 
     <script src="./signup.js"></script>
   </body>
