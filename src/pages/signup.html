@@ -226,23 +226,30 @@
         doc,
       } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
-      import { firebaseConfig } from "../js/firebase-config.js";
+      const firebaseConfig = {
+        // The VITE_ prefix allows Vercel's build tools (like Vite) to inject the variables
+        apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+        appId: import.meta.env.VITE_FIREBASE_APP_ID,
+      };
 
       // init
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
       const db = getFirestore(app);
 
-
-      document.addEventListener('DOMContentLoaded', () => {
-    const signUpButton = document.getElementById('signUpButton');
-    if (signUpButton) {
-      // Attach the 'register' function to the button's click event
-      signUpButton.addEventListener('click', register);
-    } else {
-      console.error("Sign up button not found!");
-    }
-  });
+      document.addEventListener("DOMContentLoaded", () => {
+        const signUpButton = document.getElementById("signUpButton");
+        if (signUpButton) {
+          // Attach the 'register' function to the button's click event
+          signUpButton.addEventListener("click", register);
+        } else {
+          console.error("Sign up button not found!");
+        }
+      });
       // register fn for the submit btn
       window.register = async () => {
         const username = document.getElementById("fullName").value.trim();
