@@ -193,7 +193,7 @@
 
             <button
               type="button"
-              id="signUpButton"
+              onclick="register()"
               class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer mt-5"
             >
               Sign Up
@@ -226,8 +226,8 @@
         doc,
       } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
-      const firebaseConfig = {
-        // CHANGED VITE_ to PUBLIC_ to correctly access variables on Vercel
+      // This is the correct way to read all six keys
+      export const firebaseConfig = {
         apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
         authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
         projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
@@ -241,8 +241,8 @@
       const auth = getAuth(app);
       const db = getFirestore(app);
 
-      // 1. DEFINE THE REGISTER FUNCTION (Removed 'window.' assignment)
-      const register = async () => {
+      // register fn for the submit btn
+      window.register = async () => {
         const username = document.getElementById("fullName").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
@@ -285,26 +285,10 @@
           alert("Account created successfully!");
           console.log("User saved in Firestore");
         } catch (err) {
-          // Log the error for debugging
-          console.error("Firebase Registration Error:", err);
           alert(err.message);
+          console.log(err);
         }
       };
-
-      // 2. ATTACH FUNCTION VIA EVENT LISTENER
-      document.addEventListener("DOMContentLoaded", () => {
-        // This looks for the button using its ID
-        const signUpButton = document.getElementById("signUpButton");
-        if (signUpButton) {
-          // Attach the 'register' function reference to the click event
-          signUpButton.addEventListener("click", register);
-        } else {
-          // This will now catch the missing ID if the HTML is not fixed
-          console.error(
-            "Sign up button not found! Ensure it has id='signUpButton'"
-          );
-        }
-      });
     </script>
 
     <!-- <script src="../js/signup.js"></script> -->
