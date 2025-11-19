@@ -193,7 +193,7 @@
 
             <button
               type="button"
-              onclick="register()"
+              id="signUpButton"
               class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer mt-5"
             >
               Sign Up
@@ -227,13 +227,13 @@
       } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
       const firebaseConfig = {
-        // The VITE_ prefix allows Vercel's build tools (like Vite) to inject the variables
-        apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-        appId: import.meta.env.VITE_FIREBASE_APP_ID,
+        // CHANGED VITE_ to PUBLIC_ to correctly access variables on Vercel
+        apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+        authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+        projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+        storageBucket: import.meta.env.PUBLIC_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: import.meta.env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+        appId: import.meta.env.PUBLIC_FIREBASE_APP_ID,
       };
 
       // init
@@ -241,17 +241,8 @@
       const auth = getAuth(app);
       const db = getFirestore(app);
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const signUpButton = document.getElementById("signUpButton");
-        if (signUpButton) {
-          // Attach the 'register' function to the button's click event
-          signUpButton.addEventListener("click", register);
-        } else {
-          console.error("Sign up button not found!");
-        }
-      });
-      // register fn for the submit btn
-      window.register = async () => {
+      // 1. DEFINE THE REGISTER FUNCTION (Removed 'window.' assignment)
+      const register = async () => {
         const username = document.getElementById("fullName").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
@@ -294,10 +285,26 @@
           alert("Account created successfully!");
           console.log("User saved in Firestore");
         } catch (err) {
+          // Log the error for debugging
+          console.error("Firebase Registration Error:", err);
           alert(err.message);
-          console.log(err);
         }
       };
+
+      // 2. ATTACH FUNCTION VIA EVENT LISTENER
+      document.addEventListener("DOMContentLoaded", () => {
+        // This looks for the button using its ID
+        const signUpButton = document.getElementById("signUpButton");
+        if (signUpButton) {
+          // Attach the 'register' function reference to the click event
+          signUpButton.addEventListener("click", register);
+        } else {
+          // This will now catch the missing ID if the HTML is not fixed
+          console.error(
+            "Sign up button not found! Ensure it has id='signUpButton'"
+          );
+        }
+      });
     </script>
 
     <!-- <script src="../js/signup.js"></script> -->
