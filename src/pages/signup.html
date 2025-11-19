@@ -193,7 +193,7 @@
 
             <button
               type="button"
-              onclick="register()"
+        
               class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer mt-5"
             >
               Sign Up
@@ -233,6 +233,16 @@
       const auth = getAuth(app);
       const db = getFirestore(app);
 
+
+      document.addEventListener('DOMContentLoaded', () => {
+    const signUpButton = document.getElementById('signUpButton');
+    if (signUpButton) {
+      // Attach the 'register' function to the button's click event
+      signUpButton.addEventListener('click', register);
+    } else {
+      console.error("Sign up button not found!");
+    }
+  });
       // register fn for the submit btn
       window.register = async () => {
         const username = document.getElementById("fullName").value.trim();
