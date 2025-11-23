@@ -1,53 +1,34 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
-
 import {
   getFirestore,
-  setDoc,
   doc,
+  getDoc,
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+import { firebaseConfig } from "./firebase-config.js";
 
-import { firebaseConfig } from "../js/firebase-config.js";
-
-// init
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// register fn for the submit btn
-window.register = async () => {
-  const username = document.getElementById("fullName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
+const loginForm = document.querySelector("form");
 
-  const successModal = document.getElementById("successModal");
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
   const overlay = document.getElementById("overlay");
+  const preloader = document.getElementById("preloader");
 
-  // VALIDATION
-  const errorName = document.getElementById("errorName");
   const errorEmail = document.getElementById("errorEmail");
   const errorPassword = document.getElementById("errorPassword");
-  const errorPasswordMismatch = document.getElementById(
-    "errorPasswordMismatch"
-  );
 
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
   let validationFailed = false;
 
-  //   if name empty
-  if (!username || username.length < 3) {
-    errorName.classList.remove("hidden");
-    errorName.classList.add("flex");
-    validationFailed = true;
-  } else {
-    errorName.classList.add("hidden");
-    errorName.classList.remove("flex");
-  }
-
-  //   if email invalid
   if (!email || !email.includes("@")) {
     errorEmail.classList.remove("hidden");
     errorEmail.classList.add("flex");
@@ -57,8 +38,7 @@ window.register = async () => {
     errorEmail.classList.remove("flex");
   }
 
-  //   if password empty
-  if (!password || password.length < 6) {
+  if (!password) {
     errorPassword.classList.remove("hidden");
     errorPassword.classList.add("flex");
     validationFailed = true;
@@ -67,44 +47,41 @@ window.register = async () => {
     errorPassword.classList.remove("flex");
     errorPassword.classList.remove("text-red-400");
   }
-
-  //   check password match
-  if (password !== confirmPassword) {
-    errorPasswordMismatch.classList.remove("hidden");
-    errorPasswordMismatch.classList.add("flex");
-    validationFailed = true;
-  } else {
-    errorPasswordMismatch.classList.add("hidden");
-    errorPasswordMismatch.classList.remove("flex");
-  }
-
   if (validationFailed) {
     return;
   }
 
   try {
-    // CREATE USER
-    const userCredential = await createUserWithEmailAndPassword(
+    // SIGN IN USER
+    const userCredential = await signInWithEmailAndPassword(
       auth,
       email,
       password
     );
     const user = userCredential.user;
 
-    // SAVE USER DATA
-    await setDoc(doc(db, "users", user.uid), {
-      username,
-      email,
-      role: "buyer",
-      createdAt: new Date().toISOString(),
-    });
+    // FETCH USER DATA FROM FIRESTORE
+    const userDoc = await getDoc(doc(db, "users", user.uid));
+    let destinationPage;
+    if (userDoc.exists()) {
+      const userData = userDoc.data();
+      const userRole = userData.role;
 
-    // SHOW SUCCESS MODAL
-    setInterval(() => {
-      successModal.classList.remove("hidden");
-      successModal.classList.add("flex");
+      if (userRole === "admin") {
+        destinationPage = "./adminDashboard.html";
+      } else {
+        destinationPage = "./productListing.html";
+      }
+
+      // Show preloader and overlay
       overlay.classList.remove("hidden");
-    }, 1000);
+      preloader.classList.remove("hidden");
+      setTimeout(() => {
+        window.location.href = destinationPage;
+      }, 3000);
+    } else {
+      console.log("No additional user data found");
+    }
   } catch (err) {
     const friendlyMessage = getFriendlyErrorMessage(err);
     const errorDisplay = document.getElementById("error-display");
@@ -121,7 +98,7 @@ window.register = async () => {
       }
     }, 8000);
   }
-};
+});
 
 // CHANGE FIREBASE ERRORS TO FRIENDLY MESSAGES
 function getFriendlyErrorMessage(error) {
@@ -147,11 +124,3 @@ function getFriendlyErrorMessage(error) {
   // Fallback for general errors
   return "A general application error occurred.";
 }
-
-window.launchConfetti = function () {
-  confetti({
-    particleCount: 150,
-    spread: 120,
-    origin: { y: 0.6 },
-  });
-};

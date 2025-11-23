@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -9,7 +9,8 @@
       content="Create Your Seller Account and add your products to your store."
     />
     <title>Create Your Seller Account</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="../output.css">
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
@@ -19,36 +20,11 @@
       rel="stylesheet"
     />
 
-    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="../assets/icons/favicon.svg"
       type="image/x-icon"
     />
-
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#144bb8",
-              "background-light": "#FAFAFA",
-              "background-dark": "#111621",
-            },
-            fontFamily: {
-              display: ["Manrope", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
-          },
-        },
-      };
-    </script>
 
     <style>
       .material-symbols-outlined {
@@ -60,11 +36,11 @@
 
   <body class="font-display">
     <div
-      class="relative flex min-h-screen w-full flex-col items-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden text-[#1A1A1A] dark:text-gray-200"
+      class="relative flex min-h-screen w-full flex-col items-center bg-[#FAFAFA] group/design-root overflow-x-hidden text-[#1A1A1A]"
     >
       <div class="w-full max-w-6xl px-4 md:px-8 lg:px-10">
         <header
-          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 py-2"
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 py-2"
         >
           <a href="https://made4you.vercel.app/">
             <img
@@ -77,9 +53,9 @@
 
           <div class="flex items-center gap-4">
             <a
-              class="text-sm font-medium leading-normal text-[#1A1A1A] dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
+              class="text-sm font-medium leading-normal text-[#1A1A1A] hover:text-gray-500"
               href="./signup.html"
-              >Create a Buyer Account </a
+              >Create a Buyer Account</a
             >
           </div>
         </header>
@@ -91,21 +67,19 @@
         <div class="w-full max-w-xl px-4">
           <div class="flex flex-col gap-6">
 
-            <!-- head -->
             <div class="text-center">
               <h1
-                class="text-3xl font-black tracking-[-0.033em] text-[#1A1A1A] dark:text-white md:text-4xl"
+                class="text-3xl font-black tracking-[-0.033em] text-[#1A1A1A] md:text-4xl"
               >
                 Create Your Seller Account
               </h1>
               <p
-                class="mt-2 text-base font-normal leading-normal text-[#808080] dark:text-gray-400"
+                class="mt-2 text-base font-normal leading-normal text-[#808080]"
               >
                 Join our community of creators and start selling today.
               </p>
             </div>
 
-            <!-- Form -->
             <div class="flex w-full flex-col gap-3">
               <form action="#" class="flex flex-col gap-4" method="POST">
                 <div class="flex flex-col gap-4 md:flex-row">
@@ -114,7 +88,7 @@
                       Full Name
                     </p>
                     <input
-                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black dark:border-gray-700 dark:bg-background-dark dark:text-white dark:focus:border-white dark:focus:ring-white placeholder:text-sm"
+                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black placeholder:text-sm"
                       placeholder="Enter your full name"
                       type="text"
                     />
@@ -124,7 +98,7 @@
                       Store/Brand Name
                     </p>
                     <input
-                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black dark:border-gray-700 dark:bg-background-dark dark:text-white dark:focus:border-white dark:focus:ring-white placeholder:text-sm"
+                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black placeholder:text-sm"
                       placeholder="Enter your official brand name"
                       type="text"
                     />
@@ -135,7 +109,7 @@
                     Email Address
                   </p>
                   <input
-                    class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black dark:border-gray-700 dark:bg-background-dark dark:text-white dark:focus:border-white dark:focus:ring-white placeholder:text-sm"
+                    class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black placeholder:text-sm"
                     placeholder="you@example.com"
                     type="email"
                   />
@@ -148,12 +122,12 @@
                     <div
                       class="absolute inset-y-0 left-0 flex items-center pl-4"
                     >
-                      <span class="text-[#1A1A1A] dark:text-white text-sm"
+                      <span class="text-[#1A1A1A] text-sm"
                         >+234</span
                       >
                     </div>
                     <input
-                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white py-4 pl-16 pr-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black dark:border-gray-700 dark:bg-background-dark dark:text-white dark:focus:border-white dark:focus:ring-white placeholder:text-sm"
+                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white py-4 pl-16 pr-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black placeholder:text-sm"
                       placeholder="801 234 5678"
                       type="tel"
                     />
@@ -166,12 +140,12 @@
                     </p>
                     <div class="relative">
                       <input
-                        class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 pr-12 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black dark:border-gray-700 dark:bg-background-dark dark:text-white dark:focus:border-white dark:focus:ring-white placeholder:text-sm"
+                        class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 pr-12 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black placeholder:text-sm"
                         placeholder="Enter your password"
                         type="password"
                       />
                       <button
-                        class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                        class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500 hover:text-black"
                         data-icon="visibility_off"
                         type="button"
                       >
@@ -186,7 +160,7 @@
                       Confirm Password
                     </p>
                     <input
-                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black dark:border-gray-700 dark:bg-background-dark dark:text-white dark:focus:border-white dark:focus:ring-white placeholder:text-sm"
+                      class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-white p-4 text-[#1A1A1A] placeholder:text-[#808080] focus:border-black focus:outline-none focus:ring-1 focus:ring-black placeholder:text-sm"
                       placeholder="Confirm your password"
                       type="password"
                     />
@@ -194,43 +168,42 @@
                 </div>
                 <div class="flex items-start gap-3 pt-2">
                   <input
-                    class="form-checkbox mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-400 text-black focus:ring-black dark:border-gray-600 dark:text-gray-800 dark:focus:ring-offset-background-dark"
+                    class="form-checkbox mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-400 text-black focus:ring-black"
                     id="terms-checkbox"
                     type="checkbox"
                   />
                   <label
-                    class="text-sm text-[#808080] dark:text-gray-400"
+                    class="text-sm text-[#808080]"
                     for="terms-checkbox"
                   >
                     By creating an account, you agree to our
                     <a
-                      class="font-medium text-[#1A1A1A] underline underline-offset-2 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"
+                      class="font-medium text-[#1A1A1A] underline underline-offset-2 hover:text-gray-700"
                       href="#"
                       >Seller Terms &amp; Conditions</a
                     >
                     and
                     <a
-                      class="font-medium text-[#1A1A1A] underline underline-offset-2 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"
+                      class="font-medium text-[#1A1A1A] underline underline-offset-2 hover:text-gray-700"
                       href="#"
                       >Privacy Policy</a
                     >.
                   </label>
                 </div>
                 <button
-                  class="mt-4 flex h-14 w-full items-center justify-center rounded-full bg-[#1A1A1A] px-4 py-3 text-base font-bold text-white transition-colors hover:bg-black dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                  class="mt-4 flex h-14 w-full items-center justify-center rounded-full bg-[#1A1A1A] px-4 py-3 text-base font-bold text-white transition-colors hover:bg-black"
                   type="submit"
                 >
                   Create Account
                 </button>
               </form>
 
-              <!-- No acc, login -->
               <p
-                class="mt-4 text-center text-sm text-[#808080] dark:text-gray-400"
+                class="mt-4 text-center text-sm text-[#808080]"
               >
                 Already have an account?
                 <a
-                  class="font-medium text-[#1A1A1A] underline underline-offset-2 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"
+                  class="font-medium text-[#1A1A1A] underline underline-offset-2 hover:text-gray-700"
                   href="#"
                   >Log In</a
                 >
@@ -240,22 +213,21 @@
         </div>
       </main>
 
-      <!-- Footer -->
       <footer class="w-full max-w-7xl px-4 md:px-8 lg:px-10">
         <div
-          class="flex flex-col items-center justify-between gap-4 border-t border-solid border-gray-200 py-6 dark:border-gray-800 sm:flex-row"
+          class="flex flex-col items-center justify-between gap-4 border-t border-solid border-gray-200 py-6 sm:flex-row"
         >
-          <p class="text-sm text-[#808080] dark:text-gray-400">
+          <p class="text-sm text-[#808080]">
             © 2024 Aso. All rights reserved.
           </p>
           <div class="flex items-center gap-6">
             <a
-              class="text-sm text-[#808080] underline-offset-4 hover:text-black hover:underline dark:text-gray-400 dark:hover:text-white"
+              class="text-sm text-[#808080] underline-offset-4 hover:text-black hover:underline"
               href="#"
               >Help Center</a
             >
             <a
-              class="text-sm text-[#808080] underline-offset-4 hover:text-black hover:underline dark:text-gray-400 dark:hover:text-white"
+              class="text-sm text-[#808080] underline-offset-4 hover:text-black hover:underline"
               href="#"
               >Contact Us</a
             >

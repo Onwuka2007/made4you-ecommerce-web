@@ -72,7 +72,7 @@
       >
         <div class="absolute inset-0 bg-black/50"></div>
         <div
-          class="relative z-10 mt-16 flex flex-col items-center justify-center text-center"
+          class="relative mt-16 flex flex-col items-center justify-center text-center"
         >
           <h1 class="text-4xl font-serif font-bold tracking-tight mb-6">
             Welcome Back
@@ -108,7 +108,8 @@
               <h2 class="text-3xl font-bold tracking-tight">Welcome Back</h2>
               <p class="mt-2 text-gray-600">You are signing in as a buyer.</p>
             </div>
-            <form action="#" class="mt-8 space-y-6" method="POST">
+
+            <form action="#" class="mt-8 space-y-6" method="POST" novalidate>
               <div class="flex flex-col">
                 <label
                   class="text-sm font-medium leading-normal sr-only"
@@ -120,11 +121,30 @@
                   class="form-input-bottom h-12 text-base font-normal leading-normal placeholder:text-gray-400 r:text-gray-500"
                   id="email"
                   name="email"
-                  placeholder="Email or Username"
-                  required=""
+                  placeholder="Email"
                   type="email"
                 />
+
+                <!-- Error handling - message -->
+                <div
+                  id="errorEmail"
+                  class="text-red-400 items-center gap-1 mt-2 hidden"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect width="24" height="24" fill="none" />
+                    <path
+                      fill="#fa0d0d"
+                      d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                    /></svg
+                  ><span class="text-xs">Enter valid email</span>
+                </div>
               </div>
+
               <div class="flex flex-col">
                 <label
                   class="text-sm font-medium leading-normal sr-only"
@@ -137,13 +157,31 @@
                   id="password"
                   name="password"
                   placeholder="Password"
-                  required=""
                   type="password"
                 />
+
+                <!-- Error handling - message -->
+                <div
+                  id="errorPassword"
+                  class="text-red-400 items-center gap-1 mt-2 hidden"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect width="24" height="24" fill="none" />
+                    <path
+                      fill="#fa0d0d"
+                      d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                    /></svg
+                  ><span class="text-xs">Incorrect password</span>
+                </div>
               </div>
               <div class="flex items-center justify-start">
                 <a
-                  class="text-sm font-medium text-black hover:underline"
+                  class="text-xs font-medium hover:underline underline-offset-2 text-black"
                   href="#"
                   >Forgot Password?</a
                 >
@@ -153,83 +191,71 @@
                   class="flex w-full justify-center rounded-full bg-black px-4 py-3.5 text-base font-semibold leading-6 text-white shadow-sm hover:bg-gray-800 ray-200 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-black"
                   type="submit"
                 >
-                  Sign In
+                  Let's Go
                 </button>
               </div>
             </form>
-            <div class="mt-6 text-center text-sm">
-              <p class="text-gray-500">
+
+            <div class="my-6 text-center">
+              <p class="text-gray-500 text-xs">
                 Don't have an account?
                 <a
-                  class="font-semibold text-black hover:underline"
+                  class="font-semibold text-sm text-black hover:underline"
                   href="./signup.html"
                   >Sign up</a
                 >
               </p>
             </div>
+
+            <div class="my-6 text-center">
+              <a
+                class="text-sm font-medium leading-normal text-[#1A1A1A] hover:text-gray-500 dark:hover:text-gray-400"
+                href="./sellerLogin.html"
+                >Or Login as a Seller &rarr;
+              </a>
+            </div>
           </main>
         </div>
       </div>
+
+      <!-- Error Display Component -->
+      <div
+        id="error-display"
+        class="fixed hidden right-2 md:right-10 bottom-2 md:bottom-8 w-fit items-center py-3 px-3 rounded-lg [transition:all_0.5s_ease] border-solid border border-[#f85149] text-[#b22b2b] [&amp;_svg]:text-[#b22b2b] group bg-[linear-gradient(#f851491a,#f851491a)]"
+      >
+        <p class="flex flex-row items-center mr-auto gap-x-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+          >
+            <rect width="24" height="24" fill="none" />
+            <path
+              fill="#b22b2b"
+              d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+            />
+          </svg>
+          <span class="text-xs font-medium"></span>
+        </p>
+      </div>
     </section>
 
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-      import {
-        getAuth,
-        signInWithEmailAndPassword,
-      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
-      import {
-        getFirestore,
-        doc,
-        getDoc,
-      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-      import { firebaseConfig } from "../js/firebase-config.js";
+    <!-- overlay -->
+    <div
+      class="absolute inset-0 bg-black/50 backdrop-blur-[2px] hidden"
+      id="overlay"
+    ></div>
+    <!-- From Uiverse.io by mobinkakei -->
+    <div class="wrapper hidden" id="preloader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+    </div>
 
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      const db = getFirestore(app);
-
-      const loginForm = document.querySelector("form");
-
-      loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-
-        if (!email || !password) {
-          alert("Fill in all fields");
-          return;
-        }
-
-        try {
-          // SIGN IN USER
-          const userCredential = await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-          );
-          const user = userCredential.user;
-
-          // FETCH USER DATA FROM FIRESTORE (optional)
-          const userDoc = await getDoc(doc(db, "users", user.uid));
-          if (userDoc.exists()) {
-            const userData = userDoc.data();
-            console.log("Welcome", userData.username, "Role:", userData.role);
-          } else {
-            console.log("No additional user data found in Firestore");
-          }
-
-          alert("Logged in successfully!");
-          // Redirect or load dashboard
-          window.location.href = "./productListing.html";
-        } catch (err) {
-          alert(err.message);
-          console.error(err);
-        }
-      });
-    </script>
-
-    <script src="./signup.js"></script>
+    <script type="module" src="../js/login.js"></script>
   </body>
 </html>

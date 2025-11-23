@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop | Made4You</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/icons/favicon.svg"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <!-- NAVBAR -->
+    <nav
+      class="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-white sticky top-0 z-50"
+    >
+      <a href="../index.html">
+        <img src="../assets/icons/blackLogo.svg" class="h-10" />
+      </a>
+
+      <ul class="hidden md:flex items-center gap-6 font-medium">
+        <li><a href="../explore.html" class="hover:text-black">Explore</a></li>
+        <li><a href="./shop.html" class="text-black font-semibold">Shop</a></li>
+        <li>
+          <a href="../signup-choice.html" class="hover:text-black"
+            >Become a Member</a
+          >
+        </li>
+      </ul>
+
+      <button class="md:hidden">
+        <svg width="28" height="28" fill="none" stroke="black" stroke-width="2">
+          <path d="M4 7h20M4 14h20M4 21h20" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- HERO -->
+    <header class="px-6 py-20 text-center bg-gray-50 border-b border-gray-200">
+      <h1 class="text-4xl font-bold mb-2">Discover New Drops</h1>
+      <p class="text-gray-600 text-lg max-w-xl mx-auto">
+        Hand-picked products from verified sellers. Shop the freshest drops
+        every week.
+      </p>
+    </header>
+
+    <!-- PRODUCT GRID -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold mb-8">Featured Products</h2>
+
+      <div
+        id="productGrid"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <!-- Products load here from Firestore -->
+      </div>
+    </section>
+
+    <!-- Firebase + Script -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+      import { firebaseConfig } from "../js/firebase-config.js";
+
+      // init Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      // ELEMENT
+      const productGrid = document.getElementById("productGrid");
+
+      //   loadProducts from Firestore
+      // async function loadProducts() {
+      //   const productsRef = collection(db, "products");
+
+      //   try {
+      //     const snapshot = await getDocs(productsRef);
+
+      //     const products = snapshot.docs.map((doc) => ({
+      //       id: doc.id,
+      //       ...doc.data(),
+      //     }));
+
+      //     const product = products.map((item) => {
+      //       return `Items Id: ${item.id} \n ${item.category} \n ${item.sellerId}`
+      //     }).join('\n');
+
+      //     console.log("🔥 Products from Firestore:\n", product);
+
+      //     return products;
+      //   } catch (err) {
+      //     console.error("❌ Error loading products:", err);
+      //   }
+      // }
+      // loadProducts();
+
+      async function loadProducts() {
+        try {
+          const querySnapshot = await getDocs(collection(db, "products"));
+
+          if (querySnapshot.empty) {
+            productGrid.innerHTML = `
+              <p class="col-span-full text-center text-gray-500">No products yet.</p>
+            `;
+            return;
+          }
+
+          querySnapshot.forEach((doc) => {
+            const p = doc.data();
+
+            const card = `
+              <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition">
+                <img src="${p.imageUrl}" class="h-48 w-full object-cover" />
+
+                <div class="p-4">
+                  <h3 class="font-semibold text-lg">${p.name}</h3>
+                  <p class="text-gray-600 text-sm mt-1">${p.category}</p>
+
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="font-bold text-lg">₦${p.price}</span>
+                    <button class="px-4 py-1.5 bg-black text-white text-sm rounded-full hover:bg-gray-800">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            `;
+
+            productGrid.innerHTML += card;
+          });
+        } catch (err) {
+          console.error("Error loading products:", err);
+          productGrid.innerHTML = `
+            <p class="col-span-full text-center text-red-500">Failed to load products.</p>
+          `;
+        }
+      }
+
+      loadProducts();
+    </script>
+  </body>
+</html>

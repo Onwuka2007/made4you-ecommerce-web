@@ -55,7 +55,7 @@
   <body class="bg-white">
     <section class="flex min-h-screen flex-col md:flex-row overflow-hidden">
       <!-- Left Hero -->
-      <div class="hidden md:block w-1/2 h-screen">
+      <div class="hidden md:block w-1/2 h-screen fixed top-0 left-0">
         <img
           src="../assets/images/Timini-3.jpeg"
           alt="Join Us"
@@ -74,7 +74,7 @@
         "
       >
         <div class="absolute inset-0 bg-black/70"></div>
-        <div class="relative z-10">
+        <div class="relative">
           <div class="flex items-center justify-center text-center gap-2 mb-15">
             <a href="https://made4you.vercel.app/" class="absolute top-0">
               <img
@@ -105,7 +105,7 @@
 
       <!-- Right Form -->
       <div
-        class="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-10 md:py-0 bg-white md:bg-white/80 md:backdrop-blur-lg md:shadow-xl"
+        class="md:absolute right-0 flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-10 md:py-20 bg-white md:bg-white/80 md:backdrop-blur-lg md:shadow-xl"
       >
         <div class="w-full max-w-sm">
           <div class="flex items-center justify-center text-center gap-2 mb-10">
@@ -142,6 +142,25 @@
                 placeholder="Username"
                 type="text"
               />
+
+              <!-- Error handling - username -->
+              <div
+                id="errorName"
+                class="text-red-400 items-center gap-1 mt-2 hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="24" height="24" fill="none" />
+                  <path
+                    fill="#fa0d0d"
+                    d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                  /></svg
+                ><span class="text-xs">Must be up to 3 letters</span>
+              </div>
             </div>
 
             <div>
@@ -158,6 +177,24 @@
                 placeholder="Email address"
                 class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
               />
+              <!-- Error handling - email -->
+              <div
+                id="errorEmail"
+                class="text-red-400 items-center gap-1 mt-2 hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="24" height="24" fill="none" />
+                  <path
+                    fill="#fa0d0d"
+                    d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                  /></svg
+                ><span class="text-xs">Enter valid email</span>
+              </div>
             </div>
 
             <div>
@@ -174,6 +211,24 @@
                 placeholder="Password"
                 class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
               />
+              <!-- Error handling - message -->
+              <div
+                id="errorPassword"
+                class="text-red-400 items-center gap-1 mt-2 hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="24" height="24" fill="none" />
+                  <path
+                    fill="#fa0d0d"
+                    d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                  /></svg
+                ><span class="text-xs">Must be at least 6 characters</span>
+              </div>
             </div>
 
             <div>
@@ -189,6 +244,25 @@
                 placeholder="Confirm password"
                 class="form-input-bottom h-12 w-full text-md tracking-wide font-medium leading-2 placeholder:text-gray-400"
               />
+
+              <!-- Error handling - password mismatch -->
+              <div
+                id="errorPasswordMismatch"
+                class="text-red-400 items-center gap-1 mt-2 hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="24" height="24" fill="none" />
+                  <path
+                    fill="#fa0d0d"
+                    d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                  /></svg
+                ><span class="text-xs">Passwords do not match</span>
+              </div>
             </div>
 
             <button
@@ -208,81 +282,70 @@
               >Log In</a
             >
           </p>
+
+          <div class="my-6 text-center">
+            <a
+              class="text-sm font-medium leading-normal text-[#1A1A1A] hover:text-gray-500 dark:hover:text-gray-400"
+              href="./sellerSignup.html"
+              >Or Signup as a Seller &rarr;
+            </a>
+          </div>
         </div>
+      </div>
+
+      <!-- Error Display Component -->
+      <div
+        id="error-display"
+        class="fixed hidden right-2 md:right-10 bottom-2 md:bottom-8 w-fit items-center py-3 px-3 rounded-lg [transition:all_0.5s_ease] border-solid border border-[#f85149] text-[#b22b2b] [&amp;_svg]:text-[#b22b2b] group bg-[linear-gradient(#f851491a,#f851491a)]"
+      >
+        <p class="flex flex-row items-center mr-auto gap-x-2">
+          <span class="text-xs font-medium"></span>
+        </p>
       </div>
     </section>
 
-    <!-- Firebase Modular SDK + Auth -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-      import {
-        getAuth,
-        createUserWithEmailAndPassword,
-      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+    <div
+      id="successModal"
+      class="z-10 fixed top-1/2 left-1/2 -translate-1/2 bg-white rounded-lg shadow-lg px-10 py-8 max-w-md w-full hidden"
+    >
+      <div class="flex flex-col gap-3 items-center text-center">
+        <!-- icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          class="mb-2"
+        >
+          <rect width="24" height="24" fill="none" />
+          <path
+            fill="#46b346"
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"
+          />
+        </svg>
 
-      import {
-        getFirestore,
-        setDoc,
-        doc,
-      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+        <h2 class="font-semibold text-md">
+          Welcome! Your Account has been created
+        </h2>
+        <p class="text-gray-700 text-sm">
+          You can now login with your registered email address
+        </p>
 
-      import { firebaseConfig } from "../js/firebase-config.js";
+        <button
+          onclick="launchConfetti(); setTimeout(function(){ window.location.href='./login.html'; }, 1000);"
+          class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer mt-3"
+        >
+          Go to Login
+        </button>
+      </div>
+    </div>
 
-      // init
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      const db = getFirestore(app);
-
-      // register fn for the submit btn
-      window.register = async () => {
-        const username = document.getElementById("fullName").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
-
-        // VALIDATION
-        if (!username || !email || !password) {
-          alert("Please fill all fields.");
-          return;
-        }
-
-        if (password !== confirmPassword) {
-          alert("Passwords do not match.");
-          return;
-        }
-
-        if (password.length < 6) {
-          alert("Password must be at least 6 characters.");
-          return;
-        }
-
-        try {
-          // CREATE USER
-          const userCredential = await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-          );
-          const user = userCredential.user;
-
-          // SAVE USER DATA
-          await setDoc(doc(db, "users", user.uid), {
-            username,
-            email,
-            role: "buyer",
-            createdAt: new Date().toISOString(),
-          });
-
-          alert("Account created successfully!");
-          console.log("User saved in Firestore");
-        } catch (err) {
-          alert(err.message);
-          console.log(err);
-        }
-      };
-    </script>
-
-    <!-- <script src="../js/signup.js"></script> -->
+    <!-- overlay -->
+    <div
+      class="fixed inset-0 bg-black/50 backdrop-blur-[2px] hidden overflow-hidden"
+      id="overlay"
+    ></div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script type="module" src="../js/signup.js"></script>
   </body>
 </html>
