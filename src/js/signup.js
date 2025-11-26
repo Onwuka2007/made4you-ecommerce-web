@@ -128,20 +128,20 @@ function getFriendlyErrorMessage(error) {
   if (error.code) {
     switch (error.code) {
       case "auth/user-not-found":
-        return "Email not found";
+        return "Account does not exist";
       case "auth/wrong-password":
       case "auth/invalid-credential":
         return "Incorrect password";
       case "auth/invalid-email":
-        return "The email address format is invalid";
+        return "Enter a valid email";
       case "auth/email-already-in-use":
         return "Email already exists";
       case "auth/weak-password":
-        return "Password must be at least 6 characters long";
+        return "Password must be at least 6 characters";
       case "permission-denied":
-        return "Access denied. You do not have permission to view this data";
+        return "Access denied.";
       default:
-        return "An unexpected system error occurred";
+        return "Network error. Check your connection!";
     }
   }
   // Fallback for general errors

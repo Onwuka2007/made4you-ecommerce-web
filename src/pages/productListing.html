@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Sartoria Nigeria - Modern Nigerian Fashion</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="../output.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
       rel="stylesheet"
@@ -14,48 +14,46 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#000000",
-              "background-light": "#FDFDFD",
-              "background-dark": "#0a0a0a",
-            },
-            fontFamily: {
-              display: ["Inter", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .group:hover .group-hover\:opacity-100 {
-        opacity: 1;
-      }
-      .group:hover .group-hover\:translate-y-0 {
-        transform: translateY(0);
-      }
-    </style>
   </head>
-  <body
-    class="bg-background-light dark:bg-background-dark font-display text-[#000000] dark:text-[#FDFDFD]"
-  >
+  <body>
+    <!-- Just for testing -->
+    <div class="fixed inset-0 bg-black/70 z-10"></div>
+
+    <div
+      class="z-10 fixed top-1/2 left-1/2 -translate-1/2 bg-white rounded-lg shadow-lg px-10 py-8 max-w-md w-full hidde"
+    >
+      <div class="flex flex-col gap-3 items-center text-center">
+        <!-- icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="35"
+          height="35"
+          viewBox="0 0 24 24"
+          class="mb-2"
+        >
+          <rect width="24" height="24" fill="none" />
+          <path
+            fill="#ec0808"
+            d="m18.9 21l-5.475-5.475l2.1-2.1L21 18.9zM5.1 21L3 18.9L9.9 12l-1.7-1.7l-.7.7l-1.275-1.275v2.05l-.7.7L2.5 9.45l.7-.7h2.05L4 7.5l3.55-3.55q.5-.5 1.075-.725T9.8 3t1.175.225t1.075.725l-2.3 2.3L11 7.5l-.7.7L12 9.9l2.25-2.25q-.1-.275-.162-.575t-.063-.6q0-1.475 1.013-2.488t2.487-1.012q.375 0 .713.075t.687.225L16.45 5.75l1.8 1.8l2.475-2.475q.175.35.238.687t.062.713q0 1.475-1.012 2.488t-2.488 1.012q-.3 0-.6-.05t-.575-.175z"
+          />
+        </svg>
+
+        <h2 class="font-semibold text-md">
+          Sorry! This page is still under construction
+        </h2>
+        <button
+          onclick="window.location.href='https://made4you.vercel.app/'"
+          class="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-md cursor-pointer mt-3"
+        >
+          Go back Home
+        </button>
+      </div>
+    </div>
+    <!-- Test ends here -->
     <div class="relative flex min-h-screen w-full flex-col">
       <!-- TopNavBar -->
       <header
-        class="sticky top-0 z-50 w-full bg-[#000000] text-[#FDFDFD] shadow-md"
+        class="sticky top-0 z-2 w-full bg-[#000000] text-[#FDFDFD] shadow-md"
       >
         <div
           class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-4"
